@@ -1,3 +1,3 @@
 # OPTIONAL. Core installer/helpers use only the Python standard library.
 # Exact version used for local browser/export validation; not a claim of latest/security status.
-playwright==1.57.0
+playwright==1.63.0
