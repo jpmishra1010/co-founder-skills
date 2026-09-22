@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "project_id": "northline-demo",
+  "workflow": "ui-polish",
+  "surface": "product-ui",
+  "bundle_fingerprint": "f336b5d300dbf20412c35cbcfc879a4c7d088b40be13212c8aee9e8bb2136509",
+  "artifact_path": "previews/ui-desktop.png",
+  "artifact_sha256": "e022ed8c691ede0714a53c2b01dc96cbd41772e63bbd4faea9e32b0f533d9be6",
+  "checks": [
+    {
+      "id": "project",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "checks-final/browser-report.json"
+      ]
+    },
+    {
+      "id": "evidence",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "checks-final/browser-report.json"
+      ]
+    },
+    {
+      "id": "handoff",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "checks-final/browser-report.json"
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "checks-final/browser-report.json"
+      ]
+    },
+    {
+      "id": "behavior",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "checks-final/browser-report.json"
+      ]
+    },
+    {
+      "id": "brand-fit",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "checks-final/browser-report.json"
+      ]
+    }
+  ],
+  "reference_observations": [
+    {
+      "access": "image-inspected",
+      "source": "research-catalog VIS-11 / VIS-13",
+      "observation": "Hierarchy and controlled material depth observed in accessible stills; not a full film review."
+    }
+  ],
+  "visual_observations": [
+    {
+      "location": "desktop queue and mobile selected detail",
+      "observation": "Primary task and selected details are coherent; mobile offscreen issue revised into a focused back-navigation state.",
+      "evidence": "CRAFT_REVIEW.md"
+    }
+  ],
+  "revisions": [
+    {
+      "issue": "Selected detail originally below the entire mobile queue",
+      "change": "Focused mobile detail/back action/focus restoration with regression checks"
+    }
+  ],
+  "human_acceptance": "pending; no owner acceptance recorded"
+}

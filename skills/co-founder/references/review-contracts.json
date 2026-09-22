@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "limits": "Records are self-reported. Structural validation cannot authenticate evidence or certify taste/security.",
+  "common": [
+    {
+      "id": "project",
+      "description": "Correct project/environment and authorized scope"
+    },
+    {
+      "id": "evidence",
+      "description": "Actual evidence and material gaps"
+    },
+    {
+      "id": "handoff",
+      "description": "Truthful state and next action"
+    }
+  ],
+  "workflows": {
+    "decide": [
+      {
+        "id": "decision-evidence",
+        "description": "Sources and assumptions are distinguishable"
+      },
+      {
+        "id": "alternatives",
+        "description": "Current state and a smaller option are considered"
+      },
+      {
+        "id": "falsifier",
+        "description": "A concrete reconsideration trigger exists"
+      }
+    ],
+    "feature-plan": [
+      {
+        "id": "journey",
+        "description": "Main and relevant failure/recovery paths are explicit"
+      },
+      {
+        "id": "invariants",
+        "description": "Business rules and permission boundaries are testable"
+      },
+      {
+        "id": "scope",
+        "description": "In-scope, exclusions and open decisions are clear"
+      }
+    ],
+    "impact-map": [
+      {
+        "id": "trace",
+        "description": "Relationships cite actual sources"
+      },
+      {
+        "id": "coverage",
+        "description": "Adjacent workflows have a risk-weighted check matrix"
+      },
+      {
+        "id": "scope-drift",
+        "description": "Actual changes and unmapped areas are reviewed"
+      }
+    ],
+    "build-fix": [
+      {
+        "id": "reproduction",
+        "description": "Reproduction and expected outcome are recorded"
+      },
+      {
+        "id": "diff",
+        "description": "Changes and test/config edits are reviewed"
+      },
+      {
+        "id": "retest",
+        "description": "Original failure and relevant neighbors were exercised"
+      }
+    ],
+    "verify-release": [
+      {
+        "id": "criteria",
+        "description": "Acceptance criteria map to actual evidence"
+      },
+      {
+        "id": "integrity",
+        "description": "Changed or skipped tests/configuration are disclosed"
+      },
+      {
+        "id": "release-state",
+        "description": "Implemented, tested and deployed states are distinct"
+      }
+    ],
+    "security-review": [
+      {
+        "id": "threats",
+        "description": "Assets, entry points and trust boundaries are identified"
+      },
+      {
+        "id": "negative-cases",
+        "description": "Relevant deny paths and adversarial inputs are checked"
+      },
+      {
+        "id": "findings",
+        "description": "Findings and untested areas have evidence and remediation"
+      }
+    ],
+    "ui-polish": [
+      {
+        "id": "hierarchy",
+        "description": "Task hierarchy, typography and density fit real content"
+      },
+      {
+        "id": "behavior",
+        "description": "Primary flow, states and responsive behavior are checked"
+      },
+      {
+        "id": "brand-fit",
+        "description": "Implementation matches the selected project surface"
+      }
+    ],
+    "customer-care": [
+      {
+        "id": "customer-goal",
+        "description": "Actual impact and expected behavior are captured"
+      },
+      {
+        "id": "next-action",
+        "description": "State, owner and next update are actionable"
+      },
+      {
+        "id": "truthful-reply",
+        "description": "Reply matches evidence and exposes no private diagnostics"
+      }
+    ],
+    "growth": [
+      {
+        "id": "bottleneck",
+        "description": "Chosen action addresses a documented or labeled assumed bottleneck"
+      },
+      {
+        "id": "experiment",
+        "description": "Hypothesis, audience, action and measurement are explicit"
+      },
+      {
+        "id": "claims",
+        "description": "Public messaging matches verified capabilities"
+      }
+    ],
+    "sales": [
+      {
+        "id": "fit",
+        "description": "Prospect need and fit are evidenced or unknown"
+      },
+      {
+        "id": "terms",
+        "description": "Capabilities and commercial terms match approved records"
+      },
+      {
+        "id": "next-step",
+        "description": "Draft/approved/sent/replied states and recipient are accurate"
+      }
+    ],
+    "content-studio": [
+      {
+        "id": "message",
+        "description": "One defensible idea is clear at viewing size"
+      },
+      {
+        "id": "composition",
+        "description": "Composition adds meaning and fits the brand"
+      },
+      {
+        "id": "craft-review",
+        "description": "Required actual visual/temporal checks have evidence"
+      }
+    ],
+    "founder-brief": [
+      {
+        "id": "freshness",
+        "description": "Source dates, timezone and gaps are explicit"
+      },
+      {
+        "id": "priorities",
+        "description": "A short ranked set has rationale and next actions"
+      },
+      {
+        "id": "boundaries",
+        "description": "No invented automation, account access or completed work"
+      }
+    ]
+  }
+}

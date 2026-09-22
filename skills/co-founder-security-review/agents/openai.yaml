@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · security-review"
+  short_description: "Review product security and protect founder operations"
+  default_prompt: "Use $co-founder-security-review for this task."
+policy:
+  allow_implicit_invocation: false

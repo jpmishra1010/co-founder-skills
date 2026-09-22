@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "project_id": "fieldnote-demo",
+  "display_name": "Fieldnote",
+  "confirmed": true,
+  "default_brand": "product",
+  "brands": {
+    "product": {
+      "profile": "brand.json",
+      "assets": "assets.json"
+    }
+  },
+  "fictional": true,
+  "notice": "Original fictional fixture, not an actual business or a default for other projects."
+}

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "type": "post",
+  "width": 1080,
+  "height": 1080,
+  "brand": "CO-FOUNDER",
+  "signature": "BUILD WITH INTENT.",
+  "theme": {
+    "background": "#F4F2EB",
+    "foreground": "#18201F",
+    "accent": "#C24B2E",
+    "muted": "#626964",
+    "surface": "#FBFAF6",
+    "border": "#D9DCD4"
+  },
+  "scenes": [
+    {
+      "layout": "feature",
+      "eyebrow": "LOOK BEYOND THE FILE",
+      "title": "One change.\nConnected effects.",
+      "body": "Trace the workflow before changing the code.",
+      "diagram": {
+        "type": "flow",
+        "label": "ILLUSTRATIVE MODULE MAP",
+        "items": [
+          "Repair",
+          "Inventory",
+          "Reports"
+        ]
+      }
+    }
+  ]
+}

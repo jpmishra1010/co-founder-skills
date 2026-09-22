@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · feature-plan"
+  short_description: "Define the whole workflow before implementation"
+  default_prompt: "Use $co-founder-feature-plan for this task."
+policy:
+  allow_implicit_invocation: false

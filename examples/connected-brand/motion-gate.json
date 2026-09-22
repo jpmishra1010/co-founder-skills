@@ -1,0 +1,12 @@
+{
+  "status": "inconclusive",
+  "workflow": "content-studio",
+  "project_id": "northline-demo",
+  "blocking_checks": [],
+  "missing_or_unverified": [
+    "craft-review",
+    "full-playback"
+  ],
+  "human_acceptance": "pending; no owner acceptance recorded",
+  "limits": "Self-reported structural evidence only. Does not authenticate approval, inspect linked artifacts, enforce host permissions, or certify taste/security. Never a publication permission."
+}

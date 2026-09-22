@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "type": "post",
+  "width": 1080,
+  "height": 1920,
+  "brand": "CO-FOUNDER",
+  "signature": "BUILD WITH INTENT.",
+  "theme": {
+    "background": "#F4F2EB",
+    "foreground": "#18201F",
+    "accent": "#C24B2E",
+    "muted": "#626964",
+    "surface": "#FBFAF6",
+    "border": "#D9DCD4"
+  },
+  "scenes": [
+    {
+      "layout": "steps",
+      "eyebrow": "EVIDENCE BEFORE CONFIDENCE",
+      "title": "“Done” needs\na definition.",
+      "body": "Keep the result, the checks, and the unknowns visible.",
+      "diagram": {
+        "type": "checks",
+        "label": "EXAMPLE REVIEW / NOT ACTUAL TEST RESULTS",
+        "items": [
+          "Original behavior",
+          "Related workflows",
+          "Release decision"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "project_id": "northline-demo",
+  "workflow": "content-studio",
+  "surface": "video",
+  "bundle_fingerprint": "aaa3eb1957f82ddcff1d89b54d361a6c0c9178fadf07436cbf7040c549a196b0",
+  "artifact_path": "previews/motion.mp4",
+  "artifact_sha256": "d3b55aa00cdcde680eaf48c409eb4f58be9cf7983ecf006780b7388284c64d7b",
+  "checks": [
+    {
+      "id": "project",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/motion.render.json"
+      ]
+    },
+    {
+      "id": "evidence",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/motion.render.json"
+      ]
+    },
+    {
+      "id": "handoff",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/motion.render.json"
+      ]
+    },
+    {
+      "id": "message",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/motion.render.json"
+      ]
+    },
+    {
+      "id": "composition",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/motion.render.json"
+      ]
+    },
+    {
+      "id": "craft-review",
+      "status": "not-checked",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/motion.render.json"
+      ],
+      "reason": "Sampled frames and state tests completed; full human real-time viewing remains unperformed."
+    }
+  ],
+  "reference_observations": [
+    {
+      "access": "image-inspected",
+      "source": "research-catalog VIS-11 / VIS-13",
+      "observation": "Hierarchy and controlled material depth observed in accessible stills; not a full film review."
+    }
+  ],
+  "visual_observations": [
+    {
+      "location": "1.5 / 5.5 / 7.1 / 10.6 / 15.8 / 19.8 / 23.2 seconds",
+      "observation": "A persistent R-1048 record explains completion, one deduction, repeat rejection and report reconciliation.",
+      "evidence": "CRAFT_REVIEW.md"
+    }
+  ],
+  "revisions": [
+    {
+      "issue": "v1 repeated equal slide scenes instead of explaining causality",
+      "change": "Custom continuous-object timeline and variable narrative beats"
+    }
+  ],
+  "human_acceptance": "pending; no owner acceptance recorded",
+  "full_playback": "not-checked",
+  "audio_review": "intentionally-silent"
+}

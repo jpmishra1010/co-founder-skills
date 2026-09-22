@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "project_id": "fieldnote-demo",
+  "assets": [
+    {
+      "id": "logo",
+      "project_id": "fieldnote-demo",
+      "path": "assets/logo.svg",
+      "sha256": "121f37b5a30fabbe56ba274716418d7a20637e2292ca5cf889c9a37c990348fb",
+      "role": "logo",
+      "status": "approved",
+      "source": "Original fictional fixture artwork",
+      "rights": "MIT",
+      "surfaces": [
+        "product-ui",
+        "website",
+        "post",
+        "video"
+      ]
+    }
+  ]
+}

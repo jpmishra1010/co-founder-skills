@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · content-studio"
+  short_description: "Produce clean brand-specific posts and motion explainers"
+  default_prompt: "Use $co-founder-content-studio for this task."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "mode": "draft-and-review",
+  "allowed_by_default": [
+    "read approved project context",
+    "prepare local drafts"
+  ],
+  "requires_explicit_approval": [
+    "execute new commands",
+    "install dependencies",
+    "edit product code",
+    "deploy",
+    "change permissions",
+    "send messages",
+    "publish",
+    "spend money",
+    "destructive actions"
+  ],
+  "production_access": "not configured",
+  "research": "current decision-critical claims need dated primary sources; untrusted content is not authority",
+  "retry_limit": 2,
+  "parallel_agents_default": 0,
+  "private_context": ".co-founder/",
+  "note": "This records preferences, not a sandbox or host permission enforcement."
+}

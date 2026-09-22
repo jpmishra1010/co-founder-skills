@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · impact-map"
+  short_description: "Identify related modules and behaviors before changing code"
+  default_prompt: "Use $co-founder-impact-map for this task."
+policy:
+  allow_implicit_invocation: false

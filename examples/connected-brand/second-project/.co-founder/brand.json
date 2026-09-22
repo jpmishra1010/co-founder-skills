@@ -1,0 +1,115 @@
+{
+  "schema_version": 2,
+  "project_id": "fieldnote-demo",
+  "brand_id": "product",
+  "status": "approved",
+  "approved_by": "fixture author (not user acceptance)",
+  "approval_source": "This synthetic fixture specification only",
+  "revision": "example-1",
+  "source_of_truth": [
+    "assets/logo.svg",
+    "ART_DIRECTION.md"
+  ],
+  "tokens": {
+    "background": "#FFF9F2",
+    "foreground": "#412829",
+    "accent": "#822F35",
+    "muted": "#626E67",
+    "surface": "#FFFFFF",
+    "border": "#DCE2DA",
+    "soft": "#E8EEE2",
+    "highlight": "#EAD1B8"
+  },
+  "typography": {
+    "heading": "Georgia, Times New Roman, serif",
+    "body": "Inter, Arial, sans-serif",
+    "editorial": "Georgia, Times New Roman, serif",
+    "fallbacks": [
+      "Arial",
+      "sans-serif"
+    ],
+    "notice": "No font files redistributed. Installed fonts change rasterization."
+  },
+  "voice": [
+    "Concrete, calm and operational",
+    "Speak about the task rather than superlatives"
+  ],
+  "rejected_patterns": [
+    "Generic hero plus three diagram boxes",
+    "Decorative metrics without source data",
+    "Unrelated purple/neon gradients",
+    "Fake customer claims"
+  ],
+  "surfaces": {
+    "product-ui": {
+      "status": "approved",
+      "direction": "Fictional editorial studio; red-brown ink, warm paper and serif headings; isolation fixture only.",
+      "required_asset_ids": [
+        "logo"
+      ],
+      "logo_policy": "required",
+      "tokens": {},
+      "rules": [
+        "Keep exact original logo; no recoloring.",
+        "Fictional data must be identifiable as illustrative.",
+        "Use shared line weights, type hierarchy and forest accent; do not duplicate layouts across formats."
+      ],
+      "approved_references": [
+        "ART_DIRECTION.md"
+      ]
+    },
+    "website": {
+      "status": "approved",
+      "direction": "Fictional editorial studio; red-brown ink, warm paper and serif headings; isolation fixture only.",
+      "required_asset_ids": [
+        "logo"
+      ],
+      "logo_policy": "required",
+      "tokens": {},
+      "rules": [
+        "Keep exact original logo; no recoloring.",
+        "Fictional data must be identifiable as illustrative.",
+        "Use shared line weights, type hierarchy and forest accent; do not duplicate layouts across formats."
+      ],
+      "approved_references": [
+        "ART_DIRECTION.md"
+      ]
+    },
+    "post": {
+      "status": "approved",
+      "direction": "Fictional editorial studio; red-brown ink, warm paper and serif headings; isolation fixture only.",
+      "required_asset_ids": [
+        "logo"
+      ],
+      "logo_policy": "required",
+      "tokens": {
+        "background": "#FFF9F2"
+      },
+      "rules": [
+        "Keep exact original logo; no recoloring.",
+        "Fictional data must be identifiable as illustrative.",
+        "Use shared line weights, type hierarchy and forest accent; do not duplicate layouts across formats."
+      ],
+      "approved_references": [
+        "ART_DIRECTION.md"
+      ]
+    },
+    "video": {
+      "status": "approved",
+      "direction": "Fictional editorial studio; red-brown ink, warm paper and serif headings; isolation fixture only.",
+      "required_asset_ids": [
+        "logo"
+      ],
+      "logo_policy": "required",
+      "tokens": {},
+      "rules": [
+        "Keep exact original logo; no recoloring.",
+        "Fictional data must be identifiable as illustrative.",
+        "Use shared line weights, type hierarchy and forest accent; do not duplicate layouts across formats."
+      ],
+      "approved_references": [
+        "ART_DIRECTION.md"
+      ]
+    }
+  }
+}

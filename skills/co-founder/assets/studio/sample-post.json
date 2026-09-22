@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "type": "post",
+  "width": 1080,
+  "height": 1350,
+  "brand": "CO-FOUNDER",
+  "signature": "BUILD WITH INTENT.",
+  "theme": {
+    "background": "#F4F2EB",
+    "foreground": "#18201F",
+    "accent": "#C24B2E",
+    "muted": "#626964",
+    "surface": "#FBFAF6",
+    "border": "#D9DCD4"
+  },
+  "scenes": [
+    {
+      "layout": "editorial",
+      "eyebrow": "A BETTER FOUNDER WORKFLOW",
+      "title": "Good ideas need\nbetter questions.",
+      "body": "Start with the customer problem.\nThen decide what deserves to be built.",
+      "diagram": {
+        "type": "flow",
+        "label": "THE DECISION / AN ILLUSTRATION",
+        "items": [
+          "Customer",
+          "Tradeoffs",
+          "Decision"
+        ]
+      }
+    }
+  ]
+}

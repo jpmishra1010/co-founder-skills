@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "project_id": "northline-demo",
+  "workflow": "content-studio",
+  "surface": "post",
+  "bundle_fingerprint": "46d53ec919723b55c3a0dbe027f10ad56cdd84f8bc35e60e5e3c4d42fbdc4192",
+  "artifact_path": "previews/post.png",
+  "artifact_sha256": "4165ff43569f3af64a0241af4ce5aaf76d9c0f2d92634d90317176720093676f",
+  "checks": [
+    {
+      "id": "project",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/post.render.json"
+      ]
+    },
+    {
+      "id": "evidence",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/post.render.json"
+      ]
+    },
+    {
+      "id": "handoff",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/post.render.json"
+      ]
+    },
+    {
+      "id": "message",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/post.render.json"
+      ]
+    },
+    {
+      "id": "composition",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/post.render.json"
+      ]
+    },
+    {
+      "id": "craft-review",
+      "status": "pass",
+      "evidence": [
+        "CRAFT_REVIEW.md",
+        "previews/post.render.json"
+      ]
+    }
+  ],
+  "reference_observations": [
+    {
+      "access": "image-inspected",
+      "source": "research-catalog VIS-11 / VIS-13",
+      "observation": "Hierarchy and controlled material depth observed in accessible stills; not a full film review."
+    }
+  ],
+  "visual_observations": [
+    {
+      "location": "headline, ticket and report slip",
+      "observation": "Tangible ticket connects the message to one stock movement rather than repeating three module labels.",
+      "evidence": "CRAFT_REVIEW.md"
+    }
+  ],
+  "revisions": [
+    {
+      "issue": "v1 universal diagram lacked a meaningful visual concept",
+      "change": "Recomposed as service-ticket/stock consequence using exact project assets"
+    }
+  ],
+  "human_acceptance": "pending; no owner acceptance recorded"
+}

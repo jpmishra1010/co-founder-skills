@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · verify-release"
+  short_description: "Verify behavior, related flows, and release evidence"
+  default_prompt: "Use $co-founder-verify-release for this task."
+policy:
+  allow_implicit_invocation: false

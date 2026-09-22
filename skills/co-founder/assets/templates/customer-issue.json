@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "ISSUE-EXAMPLE",
+  "status": "reported",
+  "priority": "normal",
+  "title": "Replace with sanitized issue summary",
+  "reported_at": null,
+  "source": null,
+  "affected_version": null,
+  "reproduction": [],
+  "expected": null,
+  "actual": null,
+  "fix_revision": null,
+  "verification_report": null,
+  "deployment_id": null,
+  "customer_confirmation": null,
+  "next_action": "Obtain a reproducible, sanitized example.",
+  "notes": [
+    "Valid lifecycle: reported,reproduced,fix-prepared,verified,deployed,customer-confirmed,closed.",
+    "Do not advance status without evidence."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "projects": [],
+  "notes": [
+    "Optional workspace registry. Each entry: id and relative root. Create a separate approved project context in each child root. Never use this file as a global brand palette."
+  ]
+}

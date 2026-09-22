@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "project_id": "UNSET",
+  "workflow": "ui-polish",
+  "surface": "product-ui",
+  "bundle_fingerprint": "UNSET",
+  "artifact_sha256": "UNSET",
+  "artifact_path": "UNSET",
+  "checks": [],
+  "visual_observations": [],
+  "revisions": [],
+  "reference_observations": [],
+  "full_playback": "not-checked",
+  "audio_review": "not-checked",
+  "human_acceptance": null,
+  "notes": [
+    "Use review-contracts.json to populate required checks with actual evidence.",
+    "Do not turn this draft into a pass by copying expected answers."
+  ]
+}

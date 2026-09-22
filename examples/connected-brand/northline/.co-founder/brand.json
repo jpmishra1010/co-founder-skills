@@ -1,0 +1,116 @@
+{
+  "schema_version": 2,
+  "project_id": "northline-demo",
+  "brand_id": "product",
+  "status": "approved",
+  "approved_by": "fixture author (not user acceptance)",
+  "approval_source": "This synthetic fixture specification only",
+  "revision": "example-1",
+  "source_of_truth": [
+    "assets/logo.svg",
+    "ART_DIRECTION.md"
+  ],
+  "tokens": {
+    "background": "#F5F5F0",
+    "foreground": "#1E302A",
+    "accent": "#285744",
+    "muted": "#626E67",
+    "surface": "#FFFFFF",
+    "border": "#DCE2DA",
+    "soft": "#E8EEE2",
+    "highlight": "#D6E5B7"
+  },
+  "typography": {
+    "heading": "Inter Display, Inter, Arial, sans-serif",
+    "body": "Inter, Arial, sans-serif",
+    "editorial": "Georgia, Times New Roman, serif",
+    "fallbacks": [
+      "Arial",
+      "sans-serif"
+    ],
+    "notice": "No font files redistributed. Installed fonts change rasterization."
+  },
+  "voice": [
+    "Concrete, calm and operational",
+    "Speak about the task rather than superlatives"
+  ],
+  "rejected_patterns": [
+    "Generic hero plus three diagram boxes",
+    "Decorative metrics without source data",
+    "Unrelated purple/neon gradients",
+    "Fake customer claims"
+  ],
+  "surfaces": {
+    "product-ui": {
+      "status": "approved",
+      "direction": "Compact workshop operations; quiet chrome, task-led hierarchy, drawer with next action.",
+      "required_asset_ids": [
+        "logo"
+      ],
+      "logo_policy": "required",
+      "tokens": {},
+      "rules": [
+        "Keep exact original logo; no recoloring.",
+        "Fictional data must be identifiable as illustrative.",
+        "Use shared line weights, type hierarchy and forest accent; do not duplicate layouts across formats."
+      ],
+      "approved_references": [
+        "ART_DIRECTION.md"
+      ]
+    },
+    "website": {
+      "status": "approved",
+      "direction": "Editorial product narrative; explain a workflow with actual evidence.",
+      "required_asset_ids": [
+        "logo"
+      ],
+      "logo_policy": "required",
+      "tokens": {},
+      "rules": [
+        "Keep exact original logo; no recoloring.",
+        "Fictional data must be identifiable as illustrative.",
+        "Use shared line weights, type hierarchy and forest accent; do not duplicate layouts across formats."
+      ],
+      "approved_references": [
+        "ART_DIRECTION.md"
+      ]
+    },
+    "post": {
+      "status": "approved",
+      "direction": "One finished repair ticket as a tactile visual; a clear stock change is the payoff.",
+      "required_asset_ids": [
+        "logo"
+      ],
+      "logo_policy": "required",
+      "tokens": {
+        "background": "#F3F1E8"
+      },
+      "rules": [
+        "Keep exact original logo; no recoloring.",
+        "Fictional data must be identifiable as illustrative.",
+        "Use shared line weights, type hierarchy and forest accent; do not duplicate layouts across formats."
+      ],
+      "approved_references": [
+        "ART_DIRECTION.md"
+      ]
+    },
+    "video": {
+      "status": "approved",
+      "direction": "One continuous repair record becomes a stock event and reconciled report. Unequal beats; purposeful transformations.",
+      "required_asset_ids": [
+        "logo",
+        "logo-light"
+      ],
+      "logo_policy": "required",
+      "tokens": {},
+      "rules": [
+        "Keep exact original logo; no recoloring.",
+        "Fictional data must be identifiable as illustrative.",
+        "Use shared line weights, type hierarchy and forest accent; do not duplicate layouts across formats."
+      ],
+      "approved_references": [
+        "ART_DIRECTION.md"
+      ]
+    }
+  }
+}

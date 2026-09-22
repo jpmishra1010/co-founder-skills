@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · growth"
+  short_description: "Prioritize marketing that can be measured and maintained"
+  default_prompt: "Use $co-founder-growth for this task."
+policy:
+  allow_implicit_invocation: false

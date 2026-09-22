@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "project_id": "northline-demo",
+  "assets": [
+    {
+      "id": "logo",
+      "project_id": "northline-demo",
+      "path": "assets/logo.svg",
+      "sha256": "bca672320e0442ad347ef7f9bc14f00506966b178b19d90fd3f72624323a7d16",
+      "role": "logo",
+      "status": "approved",
+      "source": "Original vector artwork created for this fictional demonstration",
+      "rights": "MIT; no third-party assets",
+      "surfaces": [
+        "product-ui",
+        "website",
+        "post",
+        "video"
+      ]
+    },
+    {
+      "id": "logo-light",
+      "project_id": "northline-demo",
+      "path": "assets/logo-light.svg",
+      "sha256": "33526cc24c0da06552ed3f1c42b404958f36be55c30dad05e638c76603023cb1",
+      "role": "logo",
+      "status": "approved",
+      "source": "Original vector artwork created for this fictional demonstration",
+      "rights": "MIT; no third-party assets",
+      "surfaces": [
+        "product-ui",
+        "website",
+        "post",
+        "video"
+      ]
+    }
+  ]
+}

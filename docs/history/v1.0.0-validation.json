@@ -1,0 +1,204 @@
+{
+  "release": "1.0.0",
+  "prepared_date": "2026-09-23",
+  "executed_utc": "2026-09-22T21:19:39.322818+00:00",
+  "environment": {
+    "os": "Linux",
+    "python": "3.13.5",
+    "node": "22.16.0",
+    "python_playwright": "1.57.0",
+    "browser": "system Chromium",
+    "video_encoder": "system FFmpeg/libx264"
+  },
+  "core_unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 112,
+    "failed": 0,
+    "scope": "authored helper/installer/fixture tests, not live model behavior"
+  },
+  "static_validation": {
+    "command": "python scripts/validate.py",
+    "status": "passed",
+    "skill_entries": 13,
+    "workflows": 12,
+    "category_guides": 17,
+    "research_sources": 48,
+    "manual_model_cases": 34
+  },
+  "installer_integration": {
+    "scope": "isolated disposable home paths; not authenticated application discovery",
+    "commands_executed": 5,
+    "exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "operations": [
+      "both-host lite dry run",
+      "both-host lite install",
+      "both-host full install",
+      "both-host full status",
+      "both-host full uninstall"
+    ]
+  },
+  "browser_smoke": {
+    "created_at": "2026-09-22T21:18:48.272749+00:00",
+    "scope": "original synthetic local UI fixture only",
+    "checks": [
+      {
+        "id": "three-viewport-capture",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "intentional-overflow-detected",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "live-navigation",
+        "status": "not-run",
+        "detail": "Offline inline-document mode; actual URL navigation not tested."
+      },
+      {
+        "id": "initial-synthetic-count",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "dialog-focus",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "create-task",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "local-persistence",
+        "status": "not-run",
+        "detail": "No authenticated/origin-backed reload in inline-document mode."
+      },
+      {
+        "id": "completion-count",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "open-filter",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "escape-closes-dialog",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "mobile-menu-opens",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "mobile-menu-closes",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "mobile-no-horizontal-overflow",
+        "status": "passed",
+        "detail": ""
+      },
+      {
+        "id": "text-inserted-not-html",
+        "status": "passed",
+        "detail": ""
+      }
+    ],
+    "passed": 12,
+    "total": 14,
+    "mode": "offline-inline-document",
+    "failed": 0,
+    "not_run": 2,
+    "model_or_live_host_tested": false,
+    "limitations": [
+      "No real product, authenticated account, external service, security audit or full accessibility audit tested.",
+      "Browser captures require separate human visual inspection."
+    ]
+  },
+  "creative_exports": {
+    "png_count": 7,
+    "video": {
+      "duration_seconds": 12,
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "frame_count": 288,
+      "audio": "none / silent"
+    },
+    "reports": [
+      {
+        "report": "examples/studio/previews/carousel/render-report.json",
+        "frames_exported": 4,
+        "overflow_frames_checked": 4,
+        "overflow_findings": [],
+        "remote_requests": 0
+      },
+      {
+        "report": "examples/studio/previews/motion-demo.render.json",
+        "frames_exported": 288,
+        "overflow_frames_checked": 288,
+        "overflow_findings": [],
+        "remote_requests": 0
+      },
+      {
+        "report": "examples/studio/previews/post.render.json",
+        "frames_exported": 1,
+        "overflow_frames_checked": 1,
+        "overflow_findings": [],
+        "remote_requests": 0
+      },
+      {
+        "report": "examples/studio/previews/square.render.json",
+        "frames_exported": 1,
+        "overflow_frames_checked": 1,
+        "overflow_findings": [],
+        "remote_requests": 0
+      },
+      {
+        "report": "examples/studio/previews/story.render.json",
+        "frames_exported": 1,
+        "overflow_frames_checked": 1,
+        "overflow_findings": [],
+        "remote_requests": 0
+      }
+    ]
+  },
+  "visual_inspection": {
+    "status": "selected original exports reviewed",
+    "reviewed": [
+      "Synthetic desktop, tablet and mobile UI captures",
+      "Static portrait post and carousel contact sheet",
+      "Sampled frames from original silent motion sample"
+    ],
+    "limits": [
+      "Not every pixel or motion frame manually inspected.",
+      "No full audio/video playback review or brand effectiveness evaluation.",
+      "Geometry checks do not certify taste, accessibility or claims."
+    ]
+  },
+  "not_verified": [
+    "Authenticated Codex/Claude skill discovery or model behavior",
+    "34 manual model evaluation cases",
+    "GitHub Actions execution and macOS/Windows runtime",
+    "Actual product integrations, production deployment, customer resolution or security certification",
+    "Live URL navigation and origin-backed persistence in browser fixture",
+    "Full external reference-film playback, restricted social feeds or exhaustive visual audits across all categories"
+  ],
+  "research_limits": "Source-page review and two accessible stills; blocked or unviewed material identified in research catalogue.",
+  "api_and_network": "No model APIs or account credentials used by pack tests. Core helpers are offline. Media exports had zero remote requests.",
+  "interpretation": "Development validation of supplied code and synthetic examples only. No promise of perfect output, no regressions, absolute privacy, security or token savings."
+}

@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "type": "video",
+  "width": 1280,
+  "height": 720,
+  "brand": "CO-FOUNDER",
+  "signature": "BUILD WITH INTENT.",
+  "theme": {
+    "background": "#F4F2EB",
+    "foreground": "#18201F",
+    "accent": "#C24B2E",
+    "muted": "#626964",
+    "surface": "#FBFAF6",
+    "border": "#D9DCD4"
+  },
+  "fps": 24,
+  "scenes": [
+    {
+      "layout": "feature",
+      "eyebrow": "FIRST / ASK BETTER QUESTIONS",
+      "title": "An idea is not\na decision.",
+      "body": "Start with the problem, not the feature.",
+      "diagram": {
+        "type": "flow",
+        "label": "ILLUSTRATIVE WORKFLOW",
+        "items": [
+          "Need",
+          "Risk",
+          "Choice"
+        ]
+      },
+      "seconds": 3
+    },
+    {
+      "layout": "feature",
+      "eyebrow": "NEXT / TRACE THE CONSEQUENCES",
+      "title": "Follow\nthe change.",
+      "body": "Look across modules, not just files.",
+      "diagram": {
+        "type": "flow",
+        "label": "ILLUSTRATIVE MODULE MAP",
+        "items": [
+          "Repair",
+          "Inventory",
+          "Reports"
+        ]
+      },
+      "seconds": 3
+    },
+    {
+      "layout": "steps",
+      "eyebrow": "THEN / VERIFY WHAT HAPPENED",
+      "title": "Show\nthe evidence.",
+      "body": "Keep passed, failed and unknown separate.",
+      "diagram": {
+        "type": "checks",
+        "label": "EXAMPLE REVIEW / NOT LIVE RESULTS",
+        "items": [
+          "Behavior",
+          "Related flows",
+          "Approval"
+        ]
+      },
+      "seconds": 3
+    },
+    {
+      "layout": "feature",
+      "eyebrow": "FINALLY / FOLLOW THROUGH",
+      "title": "Close\nthe loop.",
+      "body": "A code change is not a customer resolution.",
+      "diagram": {
+        "type": "flow",
+        "label": "ILLUSTRATIVE DELIVERY FLOW",
+        "items": [
+          "Verified",
+          "Deployed",
+          "Confirmed"
+        ]
+      },
+      "seconds": 3
+    }
+  ]
+}

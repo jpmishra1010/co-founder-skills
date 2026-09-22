@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "project_id": "unconfirmed",
+  "display_name": "UNSET",
+  "confirmed": false,
+  "default_brand": "product",
+  "brands": {
+    "product": {
+      "profile": "brand.json",
+      "assets": "assets.json"
+    }
+  },
+  "notes": [
+    "Confirm identity from this repository and the owner. Folder name is not brand approval.",
+    "Each product has separate context. An agency workspace may register child projects."
+  ]
+}

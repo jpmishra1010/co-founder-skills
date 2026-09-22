@@ -1,0 +1,31 @@
+{
+  "name": "co-founder",
+  "version": "1.1.1",
+  "license": "MIT",
+  "entry": "co-founder",
+  "specialists": [
+    "decide",
+    "feature-plan",
+    "impact-map",
+    "build-fix",
+    "verify-release",
+    "security-review",
+    "ui-polish",
+    "customer-care",
+    "growth",
+    "sales",
+    "content-studio",
+    "founder-brief"
+  ],
+  "default_install_mode": "lite",
+  "hosts": [
+    "codex",
+    "claude"
+  ],
+  "model_api_required": false,
+  "telemetry": false,
+  "research_date": "2026-09-23",
+  "project_binding_required": true,
+  "preferred_distribution": "skills-cli",
+  "helper_runtime": "Python 3.10+"
+}

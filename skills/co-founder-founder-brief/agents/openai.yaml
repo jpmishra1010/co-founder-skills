@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · founder-brief"
+  short_description: "Choose useful priorities from real current work"
+  default_prompt: "Use $co-founder-founder-brief for this task."
+policy:
+  allow_implicit_invocation: false

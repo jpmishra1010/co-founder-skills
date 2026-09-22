@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "last_reviewed": null,
+  "source": "uninitialized",
+  "modules": [],
+  "relationships": [],
+  "notes": [
+    "Path-based map, not a semantic dependency graph.",
+    "Each module: {\"id\":\"inventory\",\"paths\":[\"src/inventory/**\"],\"invariants\":[\"approved business rule\"]}.",
+    "Each relationship: {\"from\":\"repair\",\"to\":\"inventory\",\"kind\":\"writes\",\"reason\":\"approved evidence\"}. An affected module expands in both directions conservatively."
+  ]
+}

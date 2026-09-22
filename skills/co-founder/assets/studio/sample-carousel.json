@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "type": "carousel",
+  "width": 1080,
+  "height": 1350,
+  "brand": "CO-FOUNDER",
+  "signature": "BUILD WITH INTENT.",
+  "theme": {
+    "background": "#F4F2EB",
+    "foreground": "#18201F",
+    "accent": "#C24B2E",
+    "muted": "#626964",
+    "surface": "#FBFAF6",
+    "border": "#D9DCD4"
+  },
+  "scenes": [
+    {
+      "layout": "editorial",
+      "eyebrow": "A BETTER FOUNDER WORKFLOW",
+      "title": "Good ideas need\nbetter questions.",
+      "body": "Start with the customer problem.\nThen decide what deserves to be built.",
+      "diagram": {
+        "type": "flow",
+        "label": "THE DECISION / AN ILLUSTRATION",
+        "items": [
+          "Customer",
+          "Tradeoffs",
+          "Decision"
+        ]
+      }
+    },
+    {
+      "layout": "feature",
+      "eyebrow": "LOOK BEYOND THE FILE",
+      "title": "One change.\nConnected effects.",
+      "body": "Trace the workflow before changing the code.",
+      "diagram": {
+        "type": "flow",
+        "label": "ILLUSTRATIVE MODULE MAP",
+        "items": [
+          "Repair",
+          "Inventory",
+          "Reports"
+        ]
+      }
+    },
+    {
+      "layout": "steps",
+      "eyebrow": "EVIDENCE BEFORE CONFIDENCE",
+      "title": "“Done” needs\na definition.",
+      "body": "Keep the result, the checks, and the unknowns visible.",
+      "diagram": {
+        "type": "checks",
+        "label": "EXAMPLE REVIEW / NOT ACTUAL TEST RESULTS",
+        "items": [
+          "Original behavior",
+          "Related workflows",
+          "Release decision"
+        ]
+      }
+    },
+    {
+      "layout": "statement",
+      "eyebrow": "A SMALLER, CLEARER DAY",
+      "title": "Less coordination.\nMore useful work.",
+      "body": "One priority. One reason. One observable next step.",
+      "diagram": {
+        "type": "statement",
+        "label": "AN ORIGINAL WORKFLOW EXAMPLE",
+        "number": "01",
+        "items": [
+          "Close the customer loop."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "executed_at_utc": "2026-09-22T22:14:14.721005+00:00",
+  "status": "passed",
+  "checks": [
+    {
+      "check": "v1 install both hosts full into disposable home",
+      "status": "passed",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stderr": ""
+    },
+    {
+      "check": "v1.1 update dry-run both hosts",
+      "status": "passed",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stderr": ""
+    },
+    {
+      "check": "v1.1 upgrade both hosts",
+      "status": "passed",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stderr": ""
+    },
+    {
+      "check": "v1.1 status both",
+      "status": "passed",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stderr": ""
+    },
+    {
+      "check": "new project resolver installed in both hosts",
+      "status": "passed",
+      "count": 2
+    },
+    {
+      "check": "v1.1 uninstall both full",
+      "status": "passed",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stderr": ""
+    },
+    {
+      "check": "v1.1 clean lite install both",
+      "status": "passed",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stderr": ""
+    },
+    {
+      "check": "additive context init preserves legacy records",
+      "status": "passed",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "stderr": ""
+    },
+    {
+      "check": "legacy brand bytes unchanged",
+      "status": "passed"
+    },
+    {
+      "check": "new draft identity and asset templates created",
+      "status": "passed"
+    },
+    {
+      "check": "Git stages six synthetic profiles and ignores extra private context",
+      "status": "passed"
+    }
+  ],
+  "scope": "Disposable home/project only; no authenticated model account or user settings changed."
+}

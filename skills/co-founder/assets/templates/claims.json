@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "updated_at": null,
+  "claims": [],
+  "notes": [
+    "Each item: id,text,status,source,verified_at,available_to,review_by.",
+    "Statuses: proposed,implemented,tested,deployed,customer-confirmed,retired.",
+    "A status alone does not authorize publication."
+  ]
+}

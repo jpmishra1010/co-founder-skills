@@ -1,0 +1,56 @@
+{
+  "schema_version": 2,
+  "project_id": "unconfirmed",
+  "brand_id": "product",
+  "status": "unapproved",
+  "approved_by": null,
+  "approval_source": null,
+  "revision": "draft-1",
+  "source_of_truth": [],
+  "tokens": {},
+  "typography": {
+    "heading": null,
+    "body": null,
+    "fallbacks": []
+  },
+  "voice": [],
+  "rejected_patterns": [],
+  "surfaces": {
+    "product-ui": {
+      "status": "unapproved",
+      "direction": null,
+      "required_asset_ids": [],
+      "logo_policy": "omit-until-approved",
+      "tokens": {},
+      "rules": [],
+      "approved_references": []
+    },
+    "website": {
+      "status": "unapproved",
+      "direction": null,
+      "required_asset_ids": [],
+      "logo_policy": "omit-until-approved",
+      "tokens": {},
+      "rules": [],
+      "approved_references": []
+    },
+    "post": {
+      "status": "unapproved",
+      "direction": null,
+      "required_asset_ids": [],
+      "logo_policy": "omit-until-approved",
+      "tokens": {},
+      "rules": [],
+      "approved_references": []
+    },
+    "video": {
+      "status": "unapproved",
+      "direction": null,
+      "required_asset_ids": [],
+      "logo_policy": "omit-until-approved",
+      "tokens": {},
+      "rules": [],
+      "approved_references": []
+    }
+  }
+}

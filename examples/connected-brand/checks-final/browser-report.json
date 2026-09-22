@@ -1,0 +1,270 @@
+{
+  "executed_at_utc": "2026-09-22T22:07:14.892492+00:00",
+  "status": "passed",
+  "checks": [
+    {
+      "check": "desktop horizontal overflow",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "desktop assets loaded",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "desktop bound project",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "tablet horizontal overflow",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "tablet assets loaded",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "tablet bound project",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "mobile horizontal overflow",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "mobile assets loaded",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "mobile bound project",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "mobile navigation opens",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "mobile navigation closes",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "mobile detail replaces queue",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "mobile back restores queue",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "mobile focus restored",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "initial repair count",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "search filters correct record",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "search empty state",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "ready filter",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "sort order",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "waiting part cannot complete",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "waiting part does not deduct",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "completion updates one repair",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "completion deducts exactly one part",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "repeat completion is idempotent in fixture",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "inventory view opens",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "inventory reflects completion",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "activity reflects completion",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "new-repair dialog opens",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "new repair added",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "user text not interpreted as markup",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "fresh fixture explicitly resets in-memory data",
+      "status": "passed",
+      "detail": "Not a reload/persistence test"
+    },
+    {
+      "check": "detector catches deliberate overflow",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "overflow cleanup",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "northline exact logo",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "second-project exact logo",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "different projects remain separate",
+      "status": "passed",
+      "detail": ""
+    },
+    {
+      "check": "motion state at 5s",
+      "status": "passed",
+      "detail": "{'time': 5, 'stock': 24, 'movements': 0, 'record': 'R-1048'}"
+    },
+    {
+      "check": "motion state at 10.5s",
+      "status": "passed",
+      "detail": "{'time': 10.5, 'stock': 23, 'movements': 1, 'record': 'R-1048'}"
+    },
+    {
+      "check": "motion state at 15.8s",
+      "status": "passed",
+      "detail": "{'time': 15.8, 'stock': 23, 'movements': 1, 'record': 'R-1048'}"
+    },
+    {
+      "check": "motion state at 19.8s",
+      "status": "passed",
+      "detail": "{'time': 19.8, 'stock': 23, 'movements': 1, 'record': 'R-1048'}"
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "passed",
+      "detail": "[]"
+    },
+    {
+      "check": "no external browser requests",
+      "status": "passed",
+      "detail": "[]"
+    }
+  ],
+  "passed": 42,
+  "failed": 0,
+  "captures": [
+    {
+      "path": "ui-desktop.png",
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "path": "ui-tablet.png",
+      "viewport": [
+        768,
+        1024
+      ]
+    },
+    {
+      "path": "ui-mobile.png",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "ui-mobile-detail.png",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "brand-northline.png",
+      "viewport": [
+        720,
+        460
+      ]
+    },
+    {
+      "path": "brand-second-project.png",
+      "viewport": [
+        720,
+        460
+      ]
+    }
+  ],
+  "not_run": [
+    "live URL navigation",
+    "origin-backed reload persistence",
+    "production authentication/tenant isolation",
+    "authenticated Codex/Claude model execution",
+    "full audiovisual playback review"
+  ],
+  "scope": "Inline fictional UI and declared motion state; not a product-security or creative-acceptance certification."
+}

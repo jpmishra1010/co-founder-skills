@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · ui-polish"
+  short_description: "Improve existing product UI with category-aware visual craft"
+  default_prompt: "Use $co-founder-ui-polish for this task."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,51 @@
+{
+  "version": "1.1.1",
+  "prepared_on": "2026-09-23",
+  "executed_at_utc": "2026-09-22T22:45:01.388355+00:00",
+  "scope": "Installation documentation, license packaging, small setup pointer, and self-contained-core tests. No functional workflow/helper/media changes.",
+  "environment": {
+    "python": "3.13.5",
+    "os": "Linux",
+    "node": "v22.16.0",
+    "npm": "10.9.2"
+  },
+  "unit_tests": {
+    "passed": 217,
+    "failed": 0,
+    "skipped": 0,
+    "new_distribution_tests": 7,
+    "evidence": "evidence/distribution-unit-tests-111.txt"
+  },
+  "static_validation": "passed",
+  "unchanged_content": {
+    "examples": {
+      "files_compared": 64,
+      "changed": 0,
+      "status": "passed"
+    },
+    "skills/co-founder/workflows": {
+      "files_compared": 12,
+      "changed": 0,
+      "status": "passed"
+    },
+    "skills/co-founder/scripts": {
+      "files_compared": 6,
+      "changed": 0,
+      "status": "passed"
+    }
+  },
+  "external_cli": {
+    "registry_query": "npm view skills version engines --json",
+    "registry_query_result": "EAI_AGAIN registry.npmjs.org",
+    "npx_install_executed": false,
+    "real_published_repo_install_executed": false,
+    "live_host_acceptance_executed": false
+  },
+  "limits": [
+    "Offline copy test is not an execution of the external installer.",
+    "No actual public GitHub repository was published or assumed.",
+    "Browser/media were not rerun; examples are byte-identical to v1.1.0.",
+    "No macOS/Windows or logged-in host task was run.",
+    "Python remains required for bundled executable helpers."
+  ]
+}

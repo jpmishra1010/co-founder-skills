@@ -1,0 +1,26 @@
+.co-founder/
+.co-founder-backups/
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+coverage/
+.pytest_cache/
+rendered/
+private/
+
+# Only these fictional test manifests are public. Real product contexts stay ignored.
+!examples/connected-brand/northline/.co-founder/
+examples/connected-brand/northline/.co-founder/*
+!examples/connected-brand/northline/.co-founder/project.json
+!examples/connected-brand/northline/.co-founder/brand.json
+!examples/connected-brand/northline/.co-founder/assets.json
+!examples/connected-brand/second-project/.co-founder/
+examples/connected-brand/second-project/.co-founder/*
+!examples/connected-brand/second-project/.co-founder/project.json
+!examples/connected-brand/second-project/.co-founder/brand.json
+!examples/connected-brand/second-project/.co-founder/assets.json

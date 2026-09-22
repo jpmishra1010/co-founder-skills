@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "updated_at": null,
+  "priorities": [],
+  "tasks": [],
+  "issues": [],
+  "sales": [],
+  "experiments": [],
+  "content_opportunities": [],
+  "notes": [
+    "Dates must be ISO YYYY-MM-DD; timestamps should include timezone.",
+    "Items use id,title,status,priority (urgent/high/normal/low),due_date,source,next_action.",
+    "No automatic external synchronization or execution occurs."
+  ]
+}

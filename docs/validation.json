@@ -1,0 +1,68 @@
+{
+  "version": "1.1.0",
+  "prepared_on": "2026-09-23",
+  "execution_recorded_at_utc": "2026-09-22T22:16:57.353044+00:00",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "playwright": "1.57.0",
+    "browser": "Chromium /usr/bin/chromium"
+  },
+  "unit_tests": {
+    "passed": 210,
+    "failed": 0,
+    "exit_code": 0,
+    "evidence": "evidence/unit-tests.txt"
+  },
+  "browser": {
+    "passed": 42,
+    "failed": 0,
+    "mode": "inline-document",
+    "evidence": "../examples/connected-brand/checks-final/browser-report.json"
+  },
+  "upgrade": {
+    "passed_checks": 11,
+    "failed_checks": 0,
+    "evidence": "upgrade-test.json"
+  },
+  "media": {
+    "post_dimensions": [
+      1080,
+      1350
+    ],
+    "ui_dimensions": [
+      1440,
+      1225
+    ],
+    "movie": {
+      "seconds": 24,
+      "fps": 30,
+      "frames": 720,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "safe_elements": 10,
+      "checked_frames": 720,
+      "audio": "silent"
+    }
+  },
+  "model_behavior_cases": {
+    "specified": 52,
+    "executed": 0
+  },
+  "known_limits": [
+    "No authenticated Codex/Claude model task run",
+    "No live URL navigation or origin-backed persistence test",
+    "No backend, production authorization or customer bug outcome test",
+    "No full external source-film or social-feed audit",
+    "No full human audiovisual/owner acceptance of the sample",
+    "No measured token savings or virality/conversion evidence",
+    "macOS/Windows CI configured but not run here"
+  ],
+  "corrected_failures": [
+    "Initial new browser harness reused JS globals across page.set_content; changed to fresh pages.",
+    "Mobile detail originally below queue; changed to focused detail/back state with tests."
+  ],
+  "claims": "Local helper/fixture results only. Structural validation and declared approvals do not certify security, taste or model compliance."
+}

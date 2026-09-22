@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · decide"
+  short_description: "Challenge an idea and research the smallest worthwhile move"
+  default_prompt: "Use $co-founder-decide for this task."
+policy:
+  allow_implicit_invocation: false

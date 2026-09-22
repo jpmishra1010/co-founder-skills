@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; media-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Co-founder · editable local studio</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#d9d9d7;font-family:Arial,Helvetica,sans-serif;color:#181a1c}#stage{display:flex;justify-content:center;align-items:flex-start;padding:24px;min-height:100vh;overflow:auto}#canvas{position:relative;flex:none;overflow:hidden;isolation:isolate}#canvas:before{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid rgba(0,0,0,.04)}.top,.kicker,.headline,.body,.foot,.hero{position:absolute}.top{display:flex;align-items:center;justify-content:space-between;letter-spacing:.12em;font-weight:700}.brand{display:flex;align-items:center;gap:12px}.mark{display:grid;grid-template-columns:repeat(2,6px);gap:3px}.mark i{width:6px;height:6px;background:currentColor}.index{font-weight:400;letter-spacing:.08em}.kicker{font-weight:700;letter-spacing:.16em}.headline{font-weight:700;letter-spacing:-.055em;line-height:1.025;white-space:pre-line;padding-bottom:.065em;margin:0}.body{white-space:pre-line;line-height:1.45;letter-spacing:-.015em;margin:0}.foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid;padding-top:18px;letter-spacing:.025em}.hero{border:1px solid;border-radius:18px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}.heroLabel{font-weight:700;letter-spacing:.12em;text-transform:uppercase;position:absolute}.flow{display:flex;position:relative;align-items:center;justify-content:center;width:100%;gap:0}.node{border:1px solid;border-radius:12px;display:flex;flex-direction:column;justify-content:center;gap:14px;flex:1;min-width:0;position:relative;z-index:2}.node small{font-weight:700;letter-spacing:.06em;opacity:.65}.node b{font-weight:600;letter-spacing:-.03em;line-height:1.1}.connector{height:1px;position:relative;flex:none}.connector:after{content:"";width:5px;height:5px;border-right:1px solid;border-top:1px solid;transform:rotate(45deg);position:absolute;right:0;top:-2px}.checks{width:100%;display:grid;gap:0}.check{display:flex;align-items:center;justify-content:space-between;border-top:1px solid;padding:18px 0}.check:first-child{border-top:0}.check b{font-weight:500;letter-spacing:-.02em}.pill{border:1px solid;padding:8px 11px;border-radius:30px;font-size:.62em;white-space:nowrap}.bigNumber{font-size:4.2em;line-height:.85;letter-spacing:-.08em;font-weight:700;margin-bottom:22px}.heroImage{width:100%;height:100%;object-fit:contain}.note{position:absolute;letter-spacing:.02em}.controls{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:#fff;color:#17191b;box-shadow:0 8px 40px #0002;border-radius:12px;display:flex;align-items:center;gap:12px;padding:12px 16px;z-index:20;font-size:12px}.controls input{width:240px}.controls button{border:1px solid #ddd;background:#fafafa;color:#17191b;border-radius:6px;padding:6px 10px;cursor:pointer}.export #stage{padding:0;display:block;min-height:0}.export .controls{display:none}
+</style></head><body><main id="stage"><section id="canvas" aria-label="Original editable marketing artwork"></section></main>
+<div class="controls"><button id="play" type="button">Play</button><input id="scrub" type="range" min="0" value="0" aria-label="Preview frame"><span id="time"></span></div>
+<script id="config" type="application/json">{"version": 1, "type": "post", "width": 1080, "height": 1920, "brand": "CO-FOUNDER", "signature": "BUILD WITH INTENT.", "theme": {"background": "#F4F2EB", "foreground": "#18201F", "accent": "#C24B2E", "muted": "#626964", "surface": "#FBFAF6", "border": "#D9DCD4"}, "scenes": [{"layout": "steps", "eyebrow": "EVIDENCE BEFORE CONFIDENCE", "title": "“Done” needs\na definition.", "body": "Keep the result, the checks, and the unknowns visible.", "diagram": {"type": "checks", "label": "EXAMPLE REVIEW / NOT ACTUAL TEST RESULTS", "items": ["Original behavior", "Related workflows", "Release decision"]}}]}</script>
+<script>
+'use strict';
+const cfg=JSON.parse(document.getElementById('config').textContent);const canvas=document.getElementById('canvas');const C=cfg.theme;const W=cfg.width,H=cfg.height,U=W/1080;const landscape=W/H>1.2;
+const fps=cfg.fps||24;const total=cfg.type==='video'?Math.round(cfg.scenes.reduce((n,s)=>n+s.seconds,0)*fps):cfg.scenes.length;
+canvas.style.width=W+'px';canvas.style.height=H+'px';canvas.style.background=C.background;canvas.style.color=C.foreground;
+const el=(tag,cls,txt)=>{let n=document.createElement(tag);n.className=cls;if(txt!==undefined)n.textContent=txt;return n};
+const box=(n,x,y,w,h)=>{Object.assign(n.style,{left:x+'px',top:y+'px',width:w+'px'});if(h!==undefined)n.style.height=h+'px';return n};
+const font=(n,size)=>{n.style.fontSize=size+'px';return n};
+const fit=(n)=>{n.dataset.fit='1';return n};
+const ease=t=>1-Math.pow(1-Math.max(0,Math.min(1,t)),3);
+function setPos(n,x,y,w,h){box(n,x,y,w,h);return n}
+function heroGraphic(scene,hero,hw,hh,local){
+ const pad=32*U;const label=el('div','heroLabel',scene.diagram?.label||'WORKFLOW / ILLUSTRATIVE');font(label,11*U);box(label,pad,25*U,hw-2*pad);fit(label);hero.append(label);
+ if(scene.assetData){const im=el('img','heroImage');im.src=scene.assetData;im.alt=scene.assetAlt||'Approved local asset';hero.append(im);return}
+ const d=scene.diagram||{type:'flow',items:['Understand','Verify','Deliver']};const items=d.items;
+ if(d.type==='checks'){
+  const list=el('div','checks');Object.assign(list.style,{padding:`${45*U}px ${pad}px ${12*U}px`});font(list,25*U);
+  items.forEach((t,i)=>{const row=el('div','check');row.style.borderColor=C.border;row.append(fit(el('b','',t)));let pill=el('span','pill',i===items.length-1?'REVIEW':'EVIDENCE');pill.style.color=i===items.length-1?C.foreground:C.accent;pill.style.borderColor=C.border;row.append(pill);const p=cfg.type==='video'?ease((local-.2-i*.12)/.4):1;row.style.opacity=.25+.75*p;list.append(row)});hero.append(list);
+ }else if(d.type==='statement'){
+  const panel=el('div','');Object.assign(panel.style,{padding:`${pad*1.2}px ${pad}px ${pad}px`});font(panel,25*U);const num=el('div','bigNumber',d.number||'01');num.style.color=C.accent;panel.append(num);const txt=fit(el('div','',items[0]));font(txt,30*U);txt.style.maxWidth='88%';panel.append(txt);hero.append(panel);
+ }else{
+  const flow=el('div','flow');flow.style.padding=`${pad}px`;const vertical=hw<500*U;
+  if(vertical){flow.style.flexDirection='column';flow.style.gap='0';flow.style.paddingTop=55*U+'px'}
+  items.forEach((t,i)=>{if(i){const line=el('div','connector');line.style.background=C.border;line.style.color=C.border;if(vertical){line.style.width='1px';line.style.height=18*U+'px';line.style.transform='none'}else line.style.width=18*U+'px';flow.append(line)}
+   let n=el('div','node');n.style.borderColor=C.border;n.style.background=C.surface;n.style.padding=(vertical?13:21)*U+'px';n.style.minHeight=(vertical?63:125)*U+'px';if(vertical){n.style.width='100%';n.style.flexDirection='row';n.style.alignItems='center';n.style.justifyContent='flex-start';n.style.gap=20*U+'px'}
+   n.append(font(el('small','',String(i+1).padStart(2,'0')),12*U));n.append(fit(font(el('b','',t),(vertical?21:27)*U)));
+   const p=cfg.type==='video'?ease((local-.2-i*.14)/.5):1;n.style.opacity=.35+.65*p;n.style.transform=`translateY(${(1-p)*12*U}px)`;if(i===Math.min(items.length-1,Math.floor(local*1.25))||cfg.type!=='video'&&i===0){n.style.borderColor=C.accent;n.style.boxShadow=`inset 0 3px 0 ${C.accent}`};flow.append(n)});hero.append(flow);
+ }
+}
+window.renderFrame=function(frame){
+ frame=Math.max(0,Math.min(total-1,Math.floor(frame)));let idx=0,local=0;
+ if(cfg.type==='video'){let t=frame/fps;for(let i=0;i<cfg.scenes.length;i++){if(t<cfg.scenes[i].seconds){idx=i;local=t;break}t-=cfg.scenes[i].seconds;idx=i}}
+ else idx=frame%cfg.scenes.length;
+ const s=cfg.scenes[idx];canvas.replaceChildren();canvas.dataset.scene=idx;
+ const margin=64*U;const top=font(box(el('div','top'),margin,46*U,W-margin*2),14*U);const brand=el('span','brand');const mark=el('span','mark');for(let k=0;k<4;k++)mark.append(el('i',''));brand.append(mark,el('span','',cfg.brand));top.append(brand,el('span','index',String(idx+1).padStart(2,'0')+' / '+String(cfg.scenes.length).padStart(2,'0')));fit(top);canvas.append(top);
+ const textW=landscape?W*.47:W-2*margin;const kicker=font(box(el('div','kicker',s.eyebrow),margin,landscape?H*.23:134*U,textW),12*U);kicker.style.color=C.accent;fit(kicker);canvas.append(kicker);
+ const titleSize=(landscape?62:81)*U*(s.layout==='statement'?1.10:1);const title=font(box(el('h1','headline',s.title),margin,landscape?H*.31:177*U,textW),titleSize);fit(title);canvas.append(title);
+ const bodyTop=title.offsetTop+title.offsetHeight+25*U;const body=font(box(el('p','body',s.body||''),margin,bodyTop,textW*(landscape?.96:.93)),(landscape?20:25)*U);body.style.color=C.muted;fit(body);canvas.append(body);
+ let hx,hy,hw,hh;if(landscape){hx=W*.58;hy=H*.23;hw=W-hx-margin;hh=H*.58}else{hx=margin;hy=Math.max(bodyTop+body.offsetHeight+48*U,H*.50);hw=W-2*margin;hh=H-134*U-hy}
+ if(hh>60){const hero=box(el('div','hero'),hx,hy,hw,hh);hero.style.background=C.surface;hero.style.borderColor=C.border;hero.dataset.fit='1';canvas.append(hero);heroGraphic(s,hero,hw,hh,local)}
+ const footer=font(box(el('div','foot'),margin,H-83*U,W-margin*2),11*U);footer.style.borderColor=C.border;footer.style.color=C.muted;footer.append(el('span','',s.footer||'ILLUSTRATIVE DEMO · NO CUSTOMER DATA'),el('span','',cfg.signature||'OPEN SOURCE / CO-FOUNDER'));fit(footer);canvas.append(footer);
+ if(cfg.type==='video'){const a=idx===0?1:ease(local/.38);[kicker,title,body].forEach((n,i)=>{n.style.opacity=a;n.style.transform=`translateY(${(1-a)*(12+i*2)*U}px)`})}
+ document.getElementById('scrub').value=String(frame);document.getElementById('time').textContent=cfg.type==='video'?(frame/fps).toFixed(1)+'s / '+(total/fps).toFixed(1)+'s':`Frame ${idx+1} / ${cfg.scenes.length}`;
+ return {frame,scene:idx};
+};
+window.checkLayout=function(){const bounds=canvas.getBoundingClientRect();let findings=[];for(const n of canvas.querySelectorAll('[data-fit]')){let b=n.getBoundingClientRect();if(b.left<bounds.left-1||b.right>bounds.right+1||b.top<bounds.top-1||b.bottom>bounds.bottom+1||n.scrollWidth>n.clientWidth+2||n.scrollHeight>n.clientHeight+2)findings.push({kind:'overflow',text:n.textContent.slice(0,90),box:{x:b.left-bounds.left,y:b.top-bounds.top,width:b.width,height:b.height}})}const body=canvas.querySelector('.body'),hero=canvas.querySelector('.hero');if(!landscape&&body&&hero&&body.getBoundingClientRect().bottom>hero.getBoundingClientRect().top-16*U)findings.push({kind:'text-hero-collision'});if(hero){let h=hero.getBoundingClientRect();for(let child of hero.querySelectorAll('.node,.check,.heroLabel,.bigNumber')){let c=child.getBoundingClientRect();if(c.bottom>h.bottom+1||c.top<h.top-1||c.right>h.right+1)findings.push({kind:'hero-content-overflow',text:child.textContent.slice(0,70)})}}return findings};
+window.studio={totalFrames:total,fps,width:W,height:H,type:cfg.type};
+const scrub=document.getElementById('scrub');scrub.max=total-1;scrub.addEventListener('input',()=>{playing=false;renderFrame(Number(scrub.value))});let playing=false,last=0,offset=0;document.getElementById('play').onclick=()=>{playing=!playing;offset=Number(scrub.value);last=performance.now();document.getElementById('play').textContent=playing?'Pause':'Play'};
+function tick(t){if(playing){let f=(offset+Math.floor((t-last)/(cfg.type==='video'?1000/fps:1600)))%total;renderFrame(f)}requestAnimationFrame(tick)}requestAnimationFrame(tick);renderFrame(0);
+if(cfg.type!=='video')document.getElementById('play').textContent='Cycle';
+</script></body></html>

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "task_id": "UNSET",
+  "candidate_revision": "UNSET",
+  "environment": "UNSET",
+  "required_checks": [
+    "acceptance-1"
+  ],
+  "checks": [
+    {
+      "id": "acceptance-1",
+      "status": "not-run",
+      "candidate_revision": "UNSET",
+      "evidence": [],
+      "notes": "Replace with actual executed evidence. Do not remove a required check simply to pass."
+    }
+  ],
+  "acceptance_changes": [],
+  "blocking_findings": [],
+  "limitations": [
+    "Not yet executed."
+  ],
+  "deployment": {
+    "status": "not-deployed",
+    "identifier": null
+  }
+}

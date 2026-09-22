@@ -1,0 +1,26 @@
+{
+  "executed_at_utc": "2026-09-22T22:06:05.817922+00:00",
+  "project_id": "northline-demo",
+  "brand": "product",
+  "surface": "video",
+  "bundle_fingerprint": "aaa3eb1957f82ddcff1d89b54d361a6c0c9178fadf07436cbf7040c549a196b0",
+  "template_sha256": "73779cd46440dd909e9b48d668d675fa1f78ce2cbfbca3172fdd98c6486da298",
+  "artifact_sha256": "d3b55aa00cdcde680eaf48c409eb4f58be9cf7983ecf006780b7388284c64d7b",
+  "width": 1280,
+  "height": 720,
+  "frames": 720,
+  "fps": 30,
+  "seconds": 24,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "safe_elements": 10,
+  "safe_frames_checked": 720,
+  "network_requests": 0,
+  "javascript_errors": [],
+  "audio": "silent",
+  "human_visual_acceptance": false,
+  "full_playback_review": "not-performed-by-renderer",
+  "limits": "Safe-frame geometry is not a craft, accessibility, behavior or security verdict."
+}

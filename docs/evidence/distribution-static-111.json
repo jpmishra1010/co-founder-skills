@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "version": "1.1.1",
+  "skills": [
+    {
+      "name": "co-founder",
+      "entry_bytes": 3403,
+      "entry_words": 456
+    },
+    {
+      "name": "co-founder-decide",
+      "entry_bytes": 848,
+      "entry_words": 110
+    },
+    {
+      "name": "co-founder-feature-plan",
+      "entry_bytes": 842,
+      "entry_words": 104
+    },
+    {
+      "name": "co-founder-impact-map",
+      "entry_bytes": 860,
+      "entry_words": 108
+    },
+    {
+      "name": "co-founder-build-fix",
+      "entry_bytes": 853,
+      "entry_words": 108
+    },
+    {
+      "name": "co-founder-verify-release",
+      "entry_bytes": 858,
+      "entry_words": 106
+    },
+    {
+      "name": "co-founder-security-review",
+      "entry_bytes": 865,
+      "entry_words": 106
+    },
+    {
+      "name": "co-founder-ui-polish",
+      "entry_bytes": 859,
+      "entry_words": 108
+    },
+    {
+      "name": "co-founder-customer-care",
+      "entry_bytes": 843,
+      "entry_words": 106
+    },
+    {
+      "name": "co-founder-growth",
+      "entry_bytes": 842,
+      "entry_words": 108
+    },
+    {
+      "name": "co-founder-sales",
+      "entry_bytes": 849,
+      "entry_words": 106
+    },
+    {
+      "name": "co-founder-content-studio",
+      "entry_bytes": 866,
+      "entry_words": 106
+    },
+    {
+      "name": "co-founder-founder-brief",
+      "entry_bytes": 845,
+      "entry_words": 106
+    }
+  ],
+  "skill_count": 13,
+  "workflow_count": 12,
+  "category_guides": 17,
+  "research_sources": 53,
+  "evaluation_cases": 52,
+  "errors": [],
+  "warnings": [],
+  "limits": "Checks authored structure/syntax/links, not every semantic requirement, credential pattern, model behavior or external source."
+}
