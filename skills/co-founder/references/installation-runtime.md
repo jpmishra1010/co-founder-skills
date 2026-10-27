@@ -1,7 +1,7 @@
 # Installation and execution are different
 
 The public installation route is the independently maintained `npx skills add` CLI.
-The installed main skill already contains all 12 internal workflows. A separate
+The installed main skill already contains all 13 internal workflows. A separate
 Co-founder npm publication is unnecessary. Optional wrapper skills require the main
 skill alongside them; do not assume the installer automatically adds dependencies.
 

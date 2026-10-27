@@ -5,8 +5,8 @@ from _load import load,ROOT
 validator=load('validator','scripts/validate.py')
 class PackageTests(unittest.TestCase):
  def test_structure(self):self.assertEqual(validator.validate()['errors'],[])
- def test_thirteen_entries(self):self.assertEqual(validator.validate()['skill_count'],13)
- def test_twelve_workflows(self):self.assertEqual(validator.validate()['workflow_count'],12)
+ def test_fourteen_entries(self):self.assertEqual(validator.validate()['skill_count'],14)
+ def test_thirteen_workflows(self):self.assertEqual(validator.validate()['workflow_count'],13)
  def test_reference_limits_explicit(self):
   r=json.loads((ROOT/'skills/co-founder/references/research-catalog.json').read_text());self.assertTrue(r['no_full_external_video_playback']);self.assertFalse(r['source_media_included'])
  def test_evaluations_not_claimed(self):

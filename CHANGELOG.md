@@ -1,5 +1,24 @@
 # Changelog
 
+## Unreleased
+
+- Added a `finance` workflow (cash, runway scenarios, revenue health, pricing,
+  recurring spend, collections drafts, professional-question packets) with its
+  principles, review contract, `finance-review.md` template and `co-founder-finance`
+  wrapper. It moves no money and gives no tax, legal or investment advice.
+- Added `metrics.json` (defined metrics, north star, dated sourced snapshots) and
+  `commitments.json` (promises actually made, with due dates and statuses) to
+  project context. `init` creates them in new and existing projects.
+- `cf.py brief` now ranks open, at-risk and missed commitments; new `cf.py metrics`
+  reports latest values, change, trend and staleness from recorded snapshots only.
+- Founder-brief, sales and customer-care now read or record commitments.
+- Added model-evaluation specifications FN01–FN04, BR03 and SA03 (not run).
+- Rewrote the README title and opening and the skill descriptions so they say
+  plainly which hosts the pack serves. Fixed the wrapper description grammar.
+- Install commands now name the published repository `jpmishra1010/co-founder-skills`.
+- Added a proposed static landing page and an owner-approval launch checklist under
+  `docs/site/`. Neither is published, and no search ranking is claimed.
+
 ## 1.1.1 — 2026-09-23
 
 - Made the external `npx skills add` route the primary public installation method.

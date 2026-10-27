@@ -24,21 +24,22 @@ git diff --cached --stat
 # Review staged content before committing.
 git commit -m "Initial Co-founder skill pack"
 git branch -M main
-git remote add origin YOUR_ACTUAL_GITHUB_REPOSITORY_URL
+git remote add origin https://github.com/jpmishra1010/co-founder-skills.git
 git push -u origin main
 ```
 
-Do not copy that placeholder as a real remote. Alternatively use GitHub's reviewed
+For a fork, use your own repository URL instead. Alternatively use GitHub's reviewed
 upload workflow, ensuring hidden files such as `.github/` and `.gitignore` are
 included. Upload the extracted source, not only a ZIP, so people can inspect it.
 
 ## Set the public installation command
 
-After the repository exists, replace `YOUR_GITHUB_OWNER/YOUR_REPO` in README and
-START_HERE with its actual owner/name. Public installation becomes:
+The public repository is `jpmishra1010/co-founder-skills`. If it is renamed, moved or forked, update
+the install commands in README, START_HERE, docs/INSTALLATION.md and the landing
+page in `docs/site/`. Public installation is:
 
 ```sh
-npx skills add YOUR_GITHUB_OWNER/YOUR_REPO --skill co-founder
+npx skills add jpmishra1010/co-founder-skills --skill co-founder
 ```
 
 No separate npm publication, npm token, custom installer executable, or package.json

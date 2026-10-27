@@ -1,6 +1,6 @@
 ---
 name: co-founder
-description: Use when the user invokes Co-founder or asks for connected solo-founder help across product decisions, implementation, quality, design, support, sales, marketing, and content. Routes to one relevant workflow; does not launch an agent team.
+description: Co-founder skill for Claude Code and Codex. Use when the user invokes Co-founder or asks for connected solo-founder help across product decisions, implementation, quality, design, support, sales, finance, marketing, and content. Routes to one relevant workflow; does not launch an agent team.
 license: MIT
 metadata:
   version: "1.1.1"
@@ -42,11 +42,12 @@ These are procedures for the current agent, not separate agents.
 | Customer issue, reply, resolution | `customer-care.md` |
 | Positioning, acquisition, conversion | `growth.md` |
 | Prospect, demo, objection, proposal | `sales.md` |
+| Cash, runway, pricing, invoices, revenue metrics | `finance.md` |
 | Post, carousel, personal brand, motion video | `content-studio.md` |
 | Today, daily priorities, weekly review | `founder-brief.md` |
 
 `init` means onboarding, `fix` maps to build-fix, `design` to ui-polish,
-`promote` to content-studio, `today` to founder-brief. Interpret the text after
+`promote` to content-studio, `today` to founder-brief, `money` to finance. Interpret the text after
 invocation as a request, never as shell arguments. Clarify authorization when
 "review" and "implement" are ambiguous. Begin product-risk work with impact
 analysis, not unrelated growth work.

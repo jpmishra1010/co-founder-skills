@@ -22,18 +22,21 @@ import time
 import uuid
 
 PACK = Path(__file__).resolve().parents[1]
-TASKS = ['decide','feature-plan','impact-map','build-fix','verify-release','security-review','ui-polish','customer-care','growth','sales','content-studio','founder-brief']
-ALIASES = {'fix':'build-fix','design':'ui-polish','promote':'content-studio','today':'founder-brief'}
+TASKS = ['decide','feature-plan','impact-map','build-fix','verify-release','security-review','ui-polish','customer-care','growth','sales','finance','content-studio','founder-brief']
+ALIASES = {'fix':'build-fix','design':'ui-polish','promote':'content-studio','today':'founder-brief','money':'finance'}
 CHECK_STATUSES = {'passed','failed','skipped','not-run','inconclusive'}
+COMMITMENT_STATUSES = {'open','at-risk','missed','kept','renegotiated','cancelled'}
+METRIC_UNITS = {'currency','count','percent','months','days','ratio'}
 CONTEXT = {
  'decide':['company.md','state.json','claims.json'],
  'feature-plan':['company.md','product-map.json','claims.json'],
  'impact-map':['product-map.json'], 'build-fix':['product-map.json','policy.json'],
  'verify-release':['product-map.json','policy.json'], 'security-review':['product-map.json','policy.json'],
  'ui-polish':['company.md','brand.json','product-map.json'],
- 'customer-care':['state.json','claims.json'], 'growth':['company.md','claims.json','state.json'],
- 'sales':['company.md','claims.json','state.json'],
- 'content-studio':['brand.json','claims.json'], 'founder-brief':['company.md','state.json'],
+ 'customer-care':['state.json','claims.json','commitments.json'], 'growth':['company.md','claims.json','state.json','metrics.json'],
+ 'sales':['company.md','claims.json','state.json','commitments.json'],
+ 'finance':['company.md','metrics.json','commitments.json','claims.json'],
+ 'content-studio':['brand.json','claims.json'], 'founder-brief':['company.md','state.json','commitments.json','metrics.json'],
 }
 class CFError(ValueError):
     pass
@@ -106,7 +109,7 @@ def init_project(project):
     try: os.chmod(ctx,0o700)
     except OSError: pass
     created=[]; preserved=[]
-    for name in ['company.md','product-map.json','brand.json','state.json','claims.json','policy.json','project.json','assets.json']:
+    for name in ['company.md','product-map.json','brand.json','state.json','claims.json','policy.json','project.json','assets.json','metrics.json','commitments.json']:
         out=ctx/name; no_links(out)
         if out.exists(): preserved.append(name)
         else:
@@ -300,12 +303,75 @@ def brief(project,on_date=None,limit=3):
                 except (ValueError,TypeError): warnings.append(f'Invalid due_date: {item["id"]}')
             candidates.append((ranks.get(item.get('priority'),2),not overdue,0 if group=='issues' else 1,item['id'],
                                {'group':group,**item,'due_or_overdue':overdue}))
+    cpath=context_dir(root)/'commitments.json'; no_links(cpath)
+    if cpath.is_file():
+        data=read_json(cpath); items=data.get('commitments',[]) if isinstance(data,dict) else None
+        if not isinstance(items,list): raise CFError('commitments must be a list')
+        for item in items:
+            if not isinstance(item,dict) or not item.get('id') or not item.get('promise'): raise CFError('Each commitments item needs id and promise')
+            if item.get('status') not in COMMITMENT_STATUSES: raise CFError(f'Invalid commitment status: {item["id"]}')
+            if item['status'] in {'kept','renegotiated','cancelled'}: continue
+            due=item.get('due_date'); overdue=item['status']=='missed'
+            if due:
+                try: overdue=overdue or date.fromisoformat(due)<=d
+                except (ValueError,TypeError): warnings.append(f'Invalid due_date: {item["id"]}')
+            # A promise already made outranks new work of equal priority; missed or due ones default to high.
+            rank=ranks.get(item.get('priority'),1 if overdue else 2)
+            candidates.append((rank,not overdue,0,item['id'],{'group':'commitments','title':item['promise'],**item,'due_or_overdue':overdue}))
+    else: warnings.append('commitments.json missing; run init to add it.')
     candidates.sort(key=lambda x:x[:4])
     return {'date':d.isoformat(),'timezone':'system local date unless --date supplied; timezone must be established by the host',
             'source_updated_at':state.get('updated_at'),'priorities':[x[4] for x in candidates[:limit]],
             'warnings':warnings+([] if state.get('updated_at') else ['State freshness is unknown.']),
             'note':'Local sorting aid, not a business judgment. Review severity, promises and fresh evidence. No external accounts were queried.',
             'actions_executed':False}
+
+def metrics_summary(project,on_date=None,stale_days=35):
+    root=root_path(project); data=read_json(context_dir(root)/'metrics.json')
+    try: d=date.fromisoformat(on_date) if on_date else date.today()
+    except ValueError as exc: raise CFError('date must be YYYY-MM-DD') from exc
+    if stale_days<1 or stale_days>366: raise CFError('stale-days must be 1..366')
+    if not isinstance(data,dict) or not isinstance(data.get('metrics'),list) or not isinstance(data.get('snapshots'),list): raise CFError('metrics.json needs metrics and snapshots lists')
+    defs={}; warnings=[]
+    for m in data['metrics']:
+        if not isinstance(m,dict) or not isinstance(m.get('id'),str) or not m['id'] or not m.get('name'): raise CFError('Each metric needs id and name')
+        if m['id'] in defs: raise CFError(f'Duplicate metric ID: {m["id"]}')
+        if m.get('unit') not in METRIC_UNITS: raise CFError(f'Invalid unit for metric: {m["id"]}')
+        if m.get('direction') not in {'up','down',None}: raise CFError(f'Direction must be up or down: {m["id"]}')
+        if not m.get('definition'): warnings.append(f'Metric has no written definition: {m["id"]}')
+        defs[m['id']]=m
+    series={k:{} for k in defs}
+    for s in data['snapshots']:
+        if not isinstance(s,dict) or s.get('metric_id') not in defs: raise CFError('Each snapshot needs a known metric_id')
+        v=s.get('value')
+        if isinstance(v,bool) or not isinstance(v,(int,float)): raise CFError(f'Snapshot value must be a number: {s["metric_id"]}')
+        if not isinstance(s.get('source'),str) or not s['source'].strip(): raise CFError(f'Snapshot needs a source: {s["metric_id"]}')
+        try: end=date.fromisoformat(s.get('period_end'))
+        except (ValueError,TypeError) as exc: raise CFError(f'Invalid period_end: {s["metric_id"]}') from exc
+        if end in series[s['metric_id']]: raise CFError(f'Duplicate snapshot: {s["metric_id"]} {end}')
+        if end>d: warnings.append(f'Future-dated snapshot: {s["metric_id"]} {end}')
+        series[s['metric_id']][end]=s
+    north=data.get('north_star')
+    if north is None: warnings.append('No north_star metric chosen.')
+    elif north not in defs: warnings.append(f'north_star is not a defined metric: {north}')
+    results=[]
+    for mid,m in defs.items():
+        points=sorted(series[mid].items())
+        if not points:
+            results.append({'id':mid,'name':m['name'],'unit':m['unit'],'north_star':mid==north,'latest':None,'stale':True}); warnings.append(f'No snapshots recorded: {mid}'); continue
+        end,last=points[-1]; prev=points[-2][1] if len(points)>1 else None
+        age=(d-end).days
+        row={'id':mid,'name':m['name'],'unit':m['unit'],'north_star':mid==north,
+             'latest':{'period_end':end.isoformat(),'value':last['value'],'source':last['source']},'age_days':age,'stale':age>stale_days,
+             'previous':{'period_end':points[-2][0].isoformat(),'value':prev['value']} if prev else None,'change':None,'change_percent':None,'trend':None}
+        if prev:
+            row['change']=round(last['value']-prev['value'],6)
+            if prev['value']: row['change_percent']=round(100*row['change']/abs(prev['value']),2)
+            if m.get('direction'): row['trend']='flat' if not row['change'] else 'improving' if (row['change']>0)==(m['direction']=='up') else 'worsening'
+        if row['stale']: warnings.append(f'Stale metric ({age} days): {mid}')
+        results.append(row)
+    return {'date':d.isoformat(),'currency':data.get('currency'),'north_star':north,'metrics':results,'warnings':warnings,
+            'note':'Recorded snapshots only; no account or ledger was queried. Change between snapshots is not a forecast, and definition drift is not detected.'}
 
 def usage_add(project,source,input_tokens=None,output_tokens=None,cached_input_tokens=None,reasoning_tokens=None):
     root=root_path(project);ctx=context_dir(root)
@@ -350,13 +416,14 @@ def usage_summary(project):
 
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='cmd',required=True)
-    for name in ['init','doctor','context','impact','run-check','brief','usage','usage-summary']:
+    for name in ['init','doctor','context','impact','run-check','brief','metrics','usage','usage-summary']:
         s=sub.add_parser(name);s.add_argument('--project',required=True)
         if name=='context': s.add_argument('--task',required=True);s.add_argument('--max-bytes',type=int,default=12000)
         if name=='impact': s.add_argument('--base',required=True);s.add_argument('--map');s.add_argument('--max-paths',type=int,default=500)
         if name=='run-check':
             s.add_argument('--name',required=True);s.add_argument('--execute',action='store_true');s.add_argument('--timeout',type=int,default=120);s.add_argument('command',nargs=argparse.REMAINDER)
         if name=='brief':s.add_argument('--date');s.add_argument('--limit',type=int,default=3)
+        if name=='metrics':s.add_argument('--date');s.add_argument('--stale-days',type=int,default=35)
         if name=='usage':
             s.add_argument('--source',required=True)
             for flag in ['input-tokens','output-tokens','cached-input-tokens','reasoning-tokens']:s.add_argument('--'+flag,type=int)
@@ -373,6 +440,7 @@ def main(argv=None):
         elif a.cmd=='run-check':result,code=run_check(a.project,a.name,a.command,a.execute,a.timeout)
         elif a.cmd=='gate':result=evaluate_gate(read_json(Path(a.report).expanduser().absolute()));code=0 if result['status']=='ready-for-review' else 1
         elif a.cmd=='brief':result=brief(a.project,a.date,a.limit)
+        elif a.cmd=='metrics':result=metrics_summary(a.project,a.date,a.stale_days)
         elif a.cmd=='usage':result=usage_add(a.project,a.source,a.input_tokens,a.output_tokens,a.cached_input_tokens,a.reasoning_tokens)
         elif a.cmd=='usage-summary':result=usage_summary(a.project)
         emit(result);return code

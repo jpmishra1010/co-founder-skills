@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "updated_at": null,
+  "currency": null,
+  "north_star": null,
+  "metrics": [],
+  "snapshots": [],
+  "notes": [
+    "Each metric: id,name,unit (currency/count/percent/months/days/ratio),direction (up/down),definition,source.",
+    "Each snapshot: metric_id,period_end (YYYY-MM-DD),value,source,recorded_at. Values must come from a named record.",
+    "Missing periods stay absent; never estimate or backfill a value.",
+    "north_star is one metric id. Changing a definition needs a new metric id or a dated note.",
+    "No automatic external synchronization or execution occurs."
+  ]
+}

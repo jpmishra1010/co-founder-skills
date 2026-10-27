@@ -1,6 +1,6 @@
 ---
 name: co-founder-impact-map
-description: Use Co-founder impact-map for identify related modules and behaviors before changing code. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder impact-map in Claude Code or Codex to identify related modules and behaviors before changing code. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

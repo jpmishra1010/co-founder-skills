@@ -1,6 +1,6 @@
 ---
 name: co-founder-sales
-description: Use Co-founder sales for prepare truthful, relevant sales conversations and follow-ups. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder sales in Claude Code or Codex to prepare truthful, relevant sales conversations and follow-ups. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

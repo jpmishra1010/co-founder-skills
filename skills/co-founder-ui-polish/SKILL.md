@@ -1,6 +1,6 @@
 ---
 name: co-founder-ui-polish
-description: Use Co-founder ui-polish for improve existing product ui with category-aware visual craft. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder ui-polish in Claude Code or Codex to improve existing product UI with category-aware visual craft. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

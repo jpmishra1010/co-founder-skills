@@ -21,18 +21,18 @@ Use just one agent name to target only that agent. Leave confirmation prompts
 active and review destinations. `--copy` requests copies instead of links. Do not
 use administrator privileges just to install user skills.
 
-### Installation from GitHub after publication
+### Installation from GitHub
 
-Replace the owner/repository placeholder with a repository you have actually published:
+The published repository is `jpmishra1010/co-founder-skills`:
 
 ```sh
-npx skills add YOUR_GITHUB_OWNER/YOUR_REPO --skill co-founder
+npx skills add jpmishra1010/co-founder-skills --skill co-founder
 ```
 
 To explicitly target both hosts at user scope:
 
 ```sh
-npx skills add YOUR_GITHUB_OWNER/YOUR_REPO --skill co-founder --agent codex claude-code --global
+npx skills add jpmishra1010/co-founder-skills --skill co-founder --agent codex claude-code --global
 ```
 
 For a project-scoped install, run from the actual product directory, use the GitHub
@@ -62,7 +62,7 @@ those examples or run the full maintainer test suite.
 
 ## Main skill versus optional shortcuts
 
-`--skill co-founder` installs the full working system with all 12 internal workflows.
+`--skill co-founder` installs the full working system with all 13 internal workflows.
 It does not load all workflows into every conversation. This is the recommended
 low-clutter entry point.
 
@@ -71,13 +71,13 @@ folder, and the external CLI does not automatically resolve this dependency. Alw
 include the main skill when installing a shortcut:
 
 ```sh
-npx skills add YOUR_GITHUB_OWNER/YOUR_REPO --skill co-founder co-founder-ui-polish --agent codex claude-code --global
+npx skills add jpmishra1010/co-founder-skills --skill co-founder co-founder-ui-polish --agent codex claude-code --global
 ```
 
 To inspect entries first:
 
 ```sh
-npx skills add YOUR_GITHUB_OWNER/YOUR_REPO --list
+npx skills add jpmishra1010/co-founder-skills --list
 ```
 
 Avoid `--all` as a default: the CLI documents that this selects all skills/all agents

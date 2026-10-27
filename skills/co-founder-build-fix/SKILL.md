@@ -1,6 +1,6 @@
 ---
 name: co-founder-build-fix
-description: Use Co-founder build-fix for implement bounded changes and diagnose bugs with evidence. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder build-fix in Claude Code or Codex to implement bounded changes and diagnose bugs with evidence. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

@@ -29,6 +29,7 @@ not a promise that engineering will deliver them by a convenient date.
 commercial terms, responsibilities, support boundaries, and acceptance process.
 Mark legal/tax terms requiring qualified review; do not improvise contracts.
 Discounts, dates, refunds, and feature commitments need founder approval.
+Once the founder actually makes one, record it in `commitments.json`.
 6. Prepare a specific follow-up with the agreed next step. Use the actual thread
 and recipient through an authorized connector when available. Never send a
 sequence or mass outreach without explicit audience/text approval and applicable

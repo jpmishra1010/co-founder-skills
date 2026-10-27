@@ -1,6 +1,6 @@
 ---
 name: co-founder-security-review
-description: Use Co-founder security-review for review product security and protect founder operations. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder security-review in Claude Code or Codex to review product security and protect founder operations. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

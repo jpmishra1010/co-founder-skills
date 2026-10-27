@@ -1,10 +1,14 @@
-# Co-founder
+# Co-founder: Claude Code and Codex skills for solo founders
 
 **Know the project. Challenge the idea. Build with evidence. Keep the brand connected.**
 
-An open-source skill pack for solo founders working in their existing **Codex or
-Claude Code session**. One entry point, 12 focused workflows, private project
+Co-founder is an open-source pack of **Claude Code skills for solo founders** that
+also installs as a **Codex co-founder skill**. It works inside your existing Codex or
+Claude Code session: one entry skill, 13 focused workflows, private project
 knowledge, local verification helpers and project-bound creative production.
+
+The same `SKILL.md` files serve as Claude co-founder skills in Claude Code and as
+Codex skills for founders in Codex CLI/IDE. There is no separate build per host.
 
 No hosted service, mandatory model API, credential scraping, pack telemetry or automatic
 agent team. Your host still uses its normal subscription allowance. This is a
@@ -24,29 +28,28 @@ actual reference inspection, a suitable concept, rendered review and specific
 revision. The old headline-and-diagram renderer is retained only as a legacy
 compatibility/smoke helper, not a design default.
 
-**All 12 workflows have review principles.** Project scope, evidence and truthful
+**All 13 workflows have review principles.** Project scope, evidence and truthful
 handoff apply everywhere, with specialist-specific criteria. A structural review
 can say blocked, inconclusive or ready for human review. It cannot certify taste,
 security or approval to publish.
 
-## Install with the skills CLI
+## Install the skills in Claude Code or Codex
 
-After publishing this source repository on GitHub, replace `YOUR_GITHUB_OWNER/YOUR_REPO`
-with its real owner/repository name:
+Install from GitHub with the third-party `skills` CLI:
 
 ```sh
-npx skills add YOUR_GITHUB_OWNER/YOUR_REPO --skill co-founder
+npx skills add jpmishra1010/co-founder-skills --skill co-founder
 ```
 
 The interactive installer lets you choose the agent and installation scope. To
 select both supported hosts and user scope explicitly:
 
 ```sh
-npx skills add YOUR_GITHUB_OWNER/YOUR_REPO --skill co-founder --agent codex claude-code --global
+npx skills add jpmishra1010/co-founder-skills --skill co-founder --agent codex claude-code --global
 ```
 
-**Before publishing**, extract this ZIP, open its `co-founder` folder and install
-from the local skill directory:
+**From a local copy** (an extracted ZIP or a clone), open its `co-founder` folder and
+install from the local skill directory:
 
 ```sh
 npx skills add ./skills/co-founder --agent codex claude-code --global
@@ -59,7 +62,7 @@ are needed for this route. Python is not executed to install these skill files.
 other Python helpers.** Browser/video tools remain separate optional dependencies.
 Do not silently omit mandatory checks when a runtime is missing.
 
-The main `co-founder` skill includes all 12 workflows. Specialist entries are optional
+The main `co-founder` skill includes all 13 workflows. Specialist entries are optional
 shortcuts that depend on the main skill; they are not standalone packages. No model
 team or paid API is started by installation.
 
@@ -96,7 +99,7 @@ customer product, and neither is auto-applied to another project.
 
 ![Original fictional Northline campaign](examples/connected-brand/previews/post.png)
 
-## Twelve workflows, one conversation
+## Thirteen founder workflows, one conversation
 
 | Workflow | Responsibility |
 |---|---|
@@ -110,6 +113,7 @@ customer product, and neither is auto-applied to another project.
 | `customer-care` | Follow an issue through reproduction, verification, deployment and customer outcome. |
 | `growth` | Choose a measurable experiment around the actual acquisition/activation bottleneck. |
 | `sales` | Prepare relevant demos and truthful proposals/follow-ups using approved terms. |
+| `finance` | Track cash, runway, pricing and revenue from sourced records; prepare accountant questions. |
 | `content-studio` | Produce project-specific posts, campaigns and motion with actual craft review. |
 | `founder-brief` | Surface a small useful set of priorities using fresh, authorized evidence. |
 
@@ -152,4 +156,4 @@ Reference-film full playback and broad social-feed audits remain unverified; the
 Original pack code, prose and fictional artwork: [MIT](LICENSE). External tools,
 trademarks and references retain their own rights. No external films, campaign
 artwork or font files are bundled. Not affiliated with OpenAI or Anthropic. No
-perfect-design, security, revenue, virality or usage-saving guarantee.
+perfect-design, security, revenue, virality, search-ranking or usage-saving guarantee.

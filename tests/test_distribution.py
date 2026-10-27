@@ -41,7 +41,7 @@ class DistributionTests(unittest.TestCase):
 
     def test_core_contains_all_workflows(self):
         names = json.loads((ROOT / "manifest.json").read_text())["specialists"]
-        self.assertEqual(12, len(names))
+        self.assertEqual(13, len(names))
         for name in names:
             self.assertTrue((self.pack / "workflows" / f"{name}.md").is_file())
             self.assertTrue((self.pack / "references" / "principles" / f"{name}.md").is_file())

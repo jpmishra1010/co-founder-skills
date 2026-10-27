@@ -1,6 +1,6 @@
 ---
 name: co-founder-growth
-description: Use Co-founder growth for prioritize marketing that can be measured and maintained. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder growth in Claude Code or Codex to prioritize marketing that can be measured and maintained. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

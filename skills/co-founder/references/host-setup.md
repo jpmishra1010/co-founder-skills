@@ -16,8 +16,8 @@ key/provider override can change billing; do not print its value or assume that 
 subscription is active solely because it exists. The doctor reports presence of
 relevant environment-variable names, not secrets or active billing verification.
 
-Default lite mode exposes one entry skill containing all twelve workflow files.
-Full mode also exposes twelve named specialist skills. Their shared dependency
+Default lite mode exposes one entry skill containing all thirteen workflow files.
+Full mode also exposes thirteen named specialist skills. Their shared dependency
 must remain installed alongside them. Restart/reload the host if discovery does
 not update. Do not install both user and project copies with the same name unless
 you intentionally manage that precedence; duplicate discovery can be confusing.

@@ -9,16 +9,19 @@ is a blocker, not a missing detail to guess.
 
 ## Use and context
 Use for "today", a daily brief, a weekly review, or an explicitly scheduled
-summary. Read company priorities and `.co-founder/state.json`, relevant issues,
-release records, sales follow-ups, and experiment results. Use connected data only
-with actual authorization. Missing data stays unknown; do not invent activity.
-`cf.py brief` summarizes local records; it does not monitor external services.
+summary. Read company priorities and `.co-founder/state.json`, `commitments.json`,
+`metrics.json`, relevant issues, release records, sales follow-ups, and experiment
+results. Use connected data only with actual authorization. Missing data stays
+unknown; do not invent activity. `cf.py brief` ranks local records including open
+promises, and `cf.py metrics` reports latest values and staleness; neither
+monitors external services.
 
 ## Procedure
 1. Establish the current date/timezone and the period being reviewed. Check the
 freshness of source records. Do not describe old notes as overnight developments.
-2. Surface urgent customer/data/security impact first, then blocked delivery,
-promised follow-ups, and valuable commercial opportunities. Explain priority
+2. Surface urgent customer/data/security impact first, then missed or due
+commitments, blocked delivery, and valuable commercial opportunities. Report the
+north-star metric and cash runway only from recorded snapshots, with their dates. Explain priority
 using actual consequences and the founder's constraints rather than a made-up
 numerical score. Identify contradictions with earlier decisions.
 3. Select a small realistic set of next actions. Each needs the reason, owner,

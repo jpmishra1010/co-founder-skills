@@ -1,0 +1,6 @@
+interface:
+  display_name: "Co-founder · finance"
+  short_description: "Track cash, runway, pricing and revenue from real records"
+  default_prompt: "Use $co-founder-finance for this task."
+policy:
+  allow_implicit_invocation: false

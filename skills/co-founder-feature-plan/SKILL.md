@@ -1,6 +1,6 @@
 ---
 name: co-founder-feature-plan
-description: Use Co-founder feature-plan for define the whole workflow before implementation. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder feature-plan in Claude Code or Codex to define the whole workflow before implementation. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

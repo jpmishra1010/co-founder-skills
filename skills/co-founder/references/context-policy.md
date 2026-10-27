@@ -7,7 +7,8 @@ run doctor and remove/rotate exposed material through an approved process.
 
 Read company.md first only when business context matters. Read product-map.json
 for affected-module work, brand.json for creative work, claims.json for public
-statements, and state.json for current tasks. Read decision/evidence records by
+statements, state.json for current tasks, commitments.json for promises already
+made, and metrics.json for dated business numbers. Read decision/evidence records by
 specific task ID. Do not concatenate everything into one system prompt.
 
 Entries need date, source, status, and owner/review trigger when applicable.

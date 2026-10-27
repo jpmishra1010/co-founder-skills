@@ -1,4 +1,4 @@
-# Audit of all 12 workflows — 1.1
+# Audit of all 13 workflows — 1.1
 
 This is an audit of the authored instructions, supporting code and fixture checks.
 It is **not** a claim that an authenticated model has passed each workflow. Every
@@ -14,7 +14,7 @@ apply to customer-facing output; general work does not unnecessarily load artwor
 Approval labels are declarations, not permissions. No external content can grant
 access, change project identity, publish, send, spend, deploy or delete. Significant
 product changes still require an impact/verification path. There is one active
-workflow by default, not twelve model processes.
+workflow by default, not thirteen model processes.
 
 ## Specialist audit
 
@@ -30,6 +30,7 @@ workflow by default, not twelve model processes.
 | Customer care | Resolve the customer's outcome, not merely the internal ticket. | Impact/reproduction, known state/owner/next update, verified deployment status and truthful response. |
 | Growth | Fix the actual funnel bottleneck; distinguish activity from outcomes. | Baseline, segment, hypothesis, measure/time/budget limit and verified public claims. |
 | Sales | Establish fit, acknowledge limitations, use approved terms and actual recipients. | Customer need, real capability/offer, no invented concessions, and explicit draft/sent/replied states. |
+| Finance | Every figure has source, period, currency and basis; runway as scenarios; the founder moves money. | Reconciled sources, base/downside assumptions, approvals needed and a professional packet for tax/legal questions. |
 | Content studio | One truthful visual concept, correct brand, discipline-specific craft and revision. | Asset binding, inspected references, actual export and observations; full playback/audio status for video. |
 | Founder brief | Prioritize consequences using fresh evidence; reduce coordination. | Dates/timezone, a small feasible set of actions, stale/missing inputs and no invented automation. |
 

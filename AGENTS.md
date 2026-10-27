@@ -17,6 +17,6 @@ local tests from live Codex/Claude evaluation. Do not inflate research coverage.
 
 ## v1.1 project and craft checks
 Treat this as the skill-pack repository, not a customer product. Run project-context
-and quality-gate tests after modifications. Review all twelve principle contracts.
+and quality-gate tests after modifications. Review all thirteen principle contracts.
 Never embed a real customer brand or font binary in public examples. Creative
 checks must inspect exports; geometry and unit tests do not establish taste.

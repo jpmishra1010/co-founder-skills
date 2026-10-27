@@ -1,6 +1,6 @@
 interface:
   display_name: "Co-founder"
-  short_description: "Decide, ship, support, and grow with evidence"
+  short_description: "Solo-founder skills: decide, ship, support, grow with evidence"
   default_prompt: "Use $co-founder to help me with this founder task."
 policy:
   allow_implicit_invocation: true

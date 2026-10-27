@@ -156,6 +156,20 @@
         "description": "Draft/approved/sent/replied states and recipient are accurate"
       }
     ],
+    "finance": [
+      {
+        "id": "figures",
+        "description": "Each figure cites source, period, currency and basis; unknowns stay unknown"
+      },
+      {
+        "id": "scenarios",
+        "description": "Runway, pricing or spend conclusions state assumptions and a downside case"
+      },
+      {
+        "id": "authority",
+        "description": "No money moved, price changed, message sent or professional advice implied without approval"
+      }
+    ],
     "content-studio": [
       {
         "id": "message",

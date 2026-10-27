@@ -18,14 +18,13 @@ npx skills add ./skills/co-founder --agent codex claude-code --global
 ```
 
 Remove `claude-code` or `codex` to target only the host you use. This command needs
-Node.js/npm and the external skills CLI. It installs all 12 workflows behind the
+Node.js/npm and the external skills CLI. It installs all 13 workflows behind the
 main entry; you do not need a custom Co-founder npm package.
 
-Once you publish the extracted source to GitHub, replace the placeholder below
-with your real owner/repository name:
+To install straight from the published GitHub repository instead:
 
 ```sh
-npx skills add YOUR_GITHUB_OWNER/YOUR_REPO --skill co-founder --agent codex claude-code --global
+npx skills add jpmishra1010/co-founder-skills --skill co-founder --agent codex claude-code --global
 ```
 
 **Python 3.10+ is still needed for the bundled project-context, integrity and evidence

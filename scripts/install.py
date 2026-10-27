@@ -179,7 +179,7 @@ def main(argv=None) -> int:
                     marker=read_marker(target)
                     print(f'{target}: version={marker.get("version","unknown")}; locally_modified={hashes(target)!=marker["files"]}')
         if args.action == 'install' and args.mode == 'lite':
-            print('Lite includes all 12 workflows. Previously installed specialist wrappers are not removed; uninstall --mode full to remove them explicitly.')
+            print('Lite includes all 13 workflows. Previously installed specialist wrappers are not removed; uninstall --mode full to remove them explicitly.')
         return 0
     except (InstallError,OSError,ValueError) as exc:
         print(f'ERROR: {exc}', file=sys.stderr)

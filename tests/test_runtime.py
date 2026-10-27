@@ -55,6 +55,45 @@ class RuntimeTests(unittest.TestCase):
  def test_brief_bad_item(self):
   (self.root/'.co-founder/state.json').write_text('{"issues":[{}]}')
   with self.assertRaises(cf.CFError):cf.brief(self.root)
+ def commit(self,*items):(self.root/'.co-founder/commitments.json').write_text(json.dumps({'commitments':list(items)}))
+ def test_init_creates_finance_records(self):
+  for n in ['metrics.json','commitments.json']:self.assertTrue((self.root/'.co-founder'/n).is_file())
+ def test_init_adds_finance_records_to_existing_project(self):
+  (self.root/'.co-founder/metrics.json').unlink();r=cf.init_project(self.root);self.assertEqual(r['created'],['metrics.json'])
+ def test_context_money_alias(self):self.assertEqual(cf.context_plan(self.root,'money',12000)['task'],'finance')
+ def test_brief_overdue_commitment_first(self):
+  (self.root/'.co-founder/state.json').write_text(json.dumps({'updated_at':'2026-09-23','tasks':[{'id':'t','title':'New work','priority':'high','status':'open'}]}))
+  self.commit({'id':'c1','to':'customer:a','promise':'Send fix update','due_date':'2026-09-22','status':'open'})
+  r=cf.brief(self.root,'2026-09-23');self.assertEqual(r['priorities'][0]['id'],'c1');self.assertEqual(r['priorities'][0]['title'],'Send fix update')
+ def test_brief_missed_commitment_kept_closed_excluded(self):
+  self.commit({'id':'m','promise':'Refund','status':'missed'},{'id':'k','promise':'Call','status':'kept'})
+  r=cf.brief(self.root,'2026-09-23');self.assertEqual([x['id'] for x in r['priorities']],['m']);self.assertTrue(r['priorities'][0]['due_or_overdue'])
+ def test_brief_bad_commitment_status(self):
+  self.commit({'id':'x','promise':'Something','status':'done'})
+  with self.assertRaises(cf.CFError):cf.brief(self.root)
+ def test_brief_missing_commitments_warns(self):
+  (self.root/'.co-founder/commitments.json').unlink();self.assertTrue(any('commitments.json' in w for w in cf.brief(self.root,'2026-09-23')['warnings']))
+ def metrics(self,snapshots,north='mrr',direction='up'):
+  (self.root/'.co-founder/metrics.json').write_text(json.dumps({'currency':'USD','north_star':north,'metrics':[{'id':'mrr','name':'MRR','unit':'currency','direction':direction,'definition':'Active subscription value','source':'synthetic'}],'snapshots':snapshots}))
+ def test_metrics_empty_template(self):
+  r=cf.metrics_summary(self.root,'2026-09-23');self.assertEqual(r['metrics'],[]);self.assertIn('No north_star metric chosen.',r['warnings'])
+ def test_metrics_trend_and_staleness(self):
+  self.metrics([{'metric_id':'mrr','period_end':'2026-08-31','value':1000,'source':'export-aug'},{'metric_id':'mrr','period_end':'2026-07-31','value':800,'source':'export-jul'}])
+  m=cf.metrics_summary(self.root,'2026-09-23')['metrics'][0];self.assertEqual((m['change'],m['change_percent'],m['trend'],m['stale']),(200,25.0,'improving',False))
+  self.assertTrue(cf.metrics_summary(self.root,'2026-11-30')['metrics'][0]['stale'])
+ def test_metrics_direction_down_is_worsening_when_rising(self):
+  self.metrics([{'metric_id':'mrr','period_end':'2026-08-31','value':5,'source':'a'},{'metric_id':'mrr','period_end':'2026-09-15','value':6,'source':'b'}],direction='down')
+  self.assertEqual(cf.metrics_summary(self.root,'2026-09-23')['metrics'][0]['trend'],'worsening')
+ def test_metrics_no_snapshots_reported(self):
+  self.metrics([]);r=cf.metrics_summary(self.root,'2026-09-23');self.assertIsNone(r['metrics'][0]['latest']);self.assertIn('No snapshots recorded: mrr',r['warnings'])
+ def test_metrics_rejects_unsourced_or_unknown(self):
+  for snaps in [[{'metric_id':'mrr','period_end':'2026-08-31','value':1,'source':''}],[{'metric_id':'arr','period_end':'2026-08-31','value':1,'source':'a'}],
+                [{'metric_id':'mrr','period_end':'2026-08-31','value':True,'source':'a'}],[{'metric_id':'mrr','period_end':'Aug','value':1,'source':'a'}],
+                [{'metric_id':'mrr','period_end':'2026-08-31','value':1,'source':'a'}]*2]:
+   self.metrics(snaps)
+   with self.assertRaises(cf.CFError):cf.metrics_summary(self.root,'2026-09-23')
+ def test_metrics_unknown_north_star_warns(self):
+  self.metrics([],north='arr');self.assertIn('north_star is not a defined metric: arr',cf.metrics_summary(self.root,'2026-09-23')['warnings'])
  def test_usage_measured(self):
   cf.usage_add(self.root,'manual-host-record',100,30,40,10);r=cf.usage_summary(self.root);self.assertEqual(r['total_tokens'],130)
  def test_usage_partial_unknown(self):

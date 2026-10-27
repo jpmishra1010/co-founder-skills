@@ -32,6 +32,7 @@ deployment identifier. Recheck the customer's affected version/environment.
 6. Prepare the customer update, regression explanation, and follow-up. Send only
 through an explicitly approved connector action with correct recipient and text.
 Customer-confirmed requires actual feedback; an internal smoke test is separate.
+Record any promised update time, refund or fix date in `commitments.json`.
 7. Feed recurring, sanitized problems into decide/growth. Turn verified solutions
 into help articles with exact UI steps. Do not expose private tickets in content.
 

@@ -1,6 +1,6 @@
 ---
 name: co-founder-customer-care
-description: Use Co-founder customer-care for resolve customer issues beyond the code change. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder customer-care in Claude Code or Codex to resolve customer issues beyond the code change. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

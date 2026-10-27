@@ -8,7 +8,10 @@ Impact, evidence and next action. "None found" is not "none exist".
 Up to three actions with reason, owner and observable result.
 
 ## Follow-through
-Customer / sales / release items awaiting action:
+Missed or due commitments, then customer / sales / release items awaiting action:
+
+## Numbers
+North-star metric and runway with snapshot dates, or "not recorded":
 
 ## Content opportunity (optional, at most one)
 Verified source and why it matters now:

@@ -49,11 +49,18 @@ complete identity for an uncommitted code state.
 
 ```sh
 python skills/co-founder/scripts/cf.py brief --project PROJECT --date 2026-09-23 --limit 3
+python skills/co-founder/scripts/cf.py metrics --project PROJECT --date 2026-09-23 --stale-days 35
 python skills/co-founder/scripts/cf.py usage-summary --project PROJECT
 ```
 
 Use the actual local date. State entries use id/title/status/priority/due_date/source/
-next_action. The local sort is an aid, not a substitute for the founder's judgment.
+next_action. The brief also ranks open, at-risk and missed items from
+`commitments.json`; a missed or due promise defaults to high priority. The local
+sort is an aid, not a substitute for the founder's judgment.
+
+`metrics` validates `metrics.json` and reports each metric's latest and previous
+snapshot, change, trend against its declared direction, and staleness. It reads
+only recorded snapshots; it does not query a bank, payment or analytics account.
 Usage-entry syntax and subset accounting are in [TOKEN_DISCIPLINE.md](TOKEN_DISCIPLINE.md).
 
 ## Browser evidence

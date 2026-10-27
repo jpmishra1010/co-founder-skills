@@ -1,6 +1,6 @@
 ---
 name: co-founder-verify-release
-description: Use Co-founder verify-release for verify behavior, related flows, and release evidence. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder verify-release in Claude Code or Codex to verify behavior, related flows, and release evidence. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

@@ -1,6 +1,6 @@
 ---
 name: co-founder-content-studio
-description: Use Co-founder content-studio for produce clean brand-specific posts and motion explainers. Reads the shared Co-founder workflow; no automatic external actions.
+description: Use Co-founder content-studio in Claude Code or Codex to produce clean brand-specific posts and motion explainers. Reads the shared Co-founder workflow; no automatic external actions.
 license: MIT
 metadata:
   version: "1.1.1"

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "updated_at": null,
+  "commitments": [],
+  "notes": [
+    "Each item: id,to,promise,made_on,due_date,status,source,next_action,link.",
+    "to is a role or sanitized label (for example 'customer:acme-ops'), not personal contact details.",
+    "Statuses: open, at-risk, missed, kept, renegotiated, cancelled. Missed stays visible until repaired.",
+    "Record only promises actually made by the founder; a draft or suggestion is not a commitment.",
+    "link points to the related issue, sales item, invoice or decision ID."
+  ]
+}
