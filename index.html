@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Co-founder: Claude Code and Codex Skills for Solo Founders</title>
+<meta name="description" content="Open-source Claude Code and Codex skills for solo founders: one co-founder skill with 13 workflows for product decisions, releases, support, sales, finance and content.">
+<!-- Replace both placeholders before publishing. Google recommends an absolute canonical URL. -->
+<link rel="canonical" href="https://jpmishra1010.github.io/co-founder-skills/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Co-founder: Claude Code and Codex Skills for Solo Founders">
+<meta property="og:description" content="One open-source co-founder skill with 13 workflows, run inside your existing Claude Code or Codex session. No hosted service, model API or telemetry.">
+<meta property="og:url" content="https://jpmishra1010.github.io/co-founder-skills/">
+<meta property="og:site_name" content="Co-founder">
+<!-- og:image is intentionally absent until a 1200x630 card is made and reviewed as an exported image. -->
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Co-founder",
+  "description": "An open-source pack of Claude Code skills for solo founders that also installs as a Codex co-founder skill: one entry skill and 13 workflows that run inside your existing session.",
+  "url": "https://jpmishra1010.github.io/co-founder-skills/",
+  "codeRepository": "https://github.com/jpmishra1010/co-founder-skills",
+  "license": "https://github.com/jpmishra1010/co-founder-skills/blob/main/LICENSE",
+  "version": "1.1.1",
+  "programmingLanguage": ["Markdown", "Python"],
+  "runtimePlatform": "Python 3.10+",
+  "targetProduct": [
+    {"@type": "SoftwareApplication", "name": "Claude Code"},
+    {"@type": "SoftwareApplication", "name": "Codex"}
+  ],
+  "isAccessibleForFree": true,
+  "keywords": ["Claude Code skills", "Codex skills", "solo founders", "agent skills", "co-founder"]
+}
+</script>
+<style>
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1d1f1c;
+  --muted: #5b6058;
+  --line: #dedbd2;
+  --accent: #1f6b4f;
+  --code-bg: #f1efe8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141614;
+    --surface: #1c1f1c;
+    --text: #e9ebe6;
+    --muted: #a3a99f;
+    --line: #333832;
+    --accent: #7fcca9;
+    --code-bg: #232723;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 46rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.15; margin: 0 0 1rem; }
+h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; }
+p, li { color: var(--text); }
+.lede { font-size: 1.15rem; }
+.muted { color: var(--muted); }
+a { color: var(--accent); }
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+code { font-family: ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace; }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.5rem 0.5rem 0; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; }
+td:first-child { white-space: nowrap; padding-right: 1rem; }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Co-founder: Claude Code and Codex skills for solo founders</h1>
+<p class="lede">An open-source pack of Claude Code skills for solo founders that also installs
+as a Codex co-founder skill: one entry skill and 13 workflows that run inside your
+existing session.</p>
+<p>The same <code>SKILL.md</code> files serve as Claude co-founder skills in Claude Code and as
+Codex skills for founders in Codex CLI/IDE. It adds no hosted service, mandatory model API,
+credential scraping, telemetry or automatic agent team. Your host keeps using its normal
+subscription allowance.</p>
+<p><a href="https://github.com/jpmishra1010/co-founder-skills">Source code on GitHub</a> · MIT license · version 1.1.1</p>
+
+<h2>Install</h2>
+<p>With Node.js/npm and the third-party <code>skills</code> CLI:</p>
+<pre><code>npx skills add jpmishra1010/co-founder-skills --skill co-founder --agent codex claude-code --global</code></pre>
+<p>Python 3.10+ is needed for the bundled project-context and validation helpers. Then open
+your own product in the host and invoke <code>/co-founder</code> in Claude Code or
+<code>$co-founder</code> in Codex.</p>
+
+<h2>Thirteen founder workflows</h2>
+<table>
+<thead><tr><th>Workflow</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td><code>decide</code></td><td>Research and challenge assumptions; compare smaller alternatives.</td></tr>
+<tr><td><code>feature-plan</code></td><td>Define users, states, recovery, permissions and acceptance criteria.</td></tr>
+<tr><td><code>impact-map</code></td><td>Trace shared data and modules a change must preserve.</td></tr>
+<tr><td><code>build-fix</code></td><td>Reproduce, diagnose and implement authorized, bounded changes.</td></tr>
+<tr><td><code>verify-release</code></td><td>Run relevant checks and distinguish release states.</td></tr>
+<tr><td><code>security-review</code></td><td>Review trust boundaries, deny paths and sensitive operations.</td></tr>
+<tr><td><code>ui-polish</code></td><td>Improve an existing product using its own design language.</td></tr>
+<tr><td><code>customer-care</code></td><td>Follow an issue through to a verified customer outcome.</td></tr>
+<tr><td><code>growth</code></td><td>Choose a measurable experiment around the real bottleneck.</td></tr>
+<tr><td><code>sales</code></td><td>Prepare relevant demos and truthful proposals and follow-ups.</td></tr>
+<tr><td><code>finance</code></td><td>Track cash, runway, pricing and revenue from sourced records.</td></tr>
+<tr><td><code>content-studio</code></td><td>Produce project-specific posts, campaigns and motion.</td></tr>
+<tr><td><code>founder-brief</code></td><td>Surface a small set of priorities from fresh evidence.</td></tr>
+</tbody>
+</table>
+
+<h2>What it is not</h2>
+<p>A working method for the agent you already use, not a new model or an autonomous legal or
+business partner. Publishing, sending, deployment, spending and scheduling stay separately
+authorized by you. Model behavior inside authenticated Claude Code and Codex sessions has not
+been tested by this project; local tests cover structure and helpers only.</p>
+<p class="muted">No perfect-design, security, revenue, virality, search-ranking or
+usage-saving guarantee.</p>
+
+<footer class="muted">
+<p>Original pack code, prose and fictional artwork are MIT licensed. External tools and
+trademarks retain their own rights. Not affiliated with OpenAI or Anthropic.</p>
+</footer>
+</main>
+</body>
+</html>
