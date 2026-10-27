@@ -1,8 +1,12 @@
-# Landing page (proposed, not published)
+# Landing page
 
 `index.html` is a single static page for search engines and people who arrive
-from a search. It has no scripts other than JSON-LD, no web fonts, no analytics
-and no external requests. Nothing here is live until the owner publishes it.
+from a search. It is published from the `gh-pages` branch, which `main` does not
+update automatically. It loads no web fonts, analytics or external requests. One
+small inline script copies the install commands and rotates the illustrative
+terminal examples. All the text is in the HTML, so the page reads fully without
+the script. The terminal is labelled "Illustrative session": it shows how routing
+works, not a recorded transcript.
 
 ## Before publishing
 
@@ -14,9 +18,10 @@ and no external requests. Nothing here is live until the owner publishes it.
    changes, update both.
 3. Make and inspect a 1200×630 social card before adding `og:image`. Geometry
    checks do not establish that it looks right.
-4. The page was checked at 375 px width in a local preview with no horizontal
-   scrolling. Dark mode styles exist but were not visually checked, because the
-   local preview renders static HTML in light mode only.
+4. The page was checked in a local preview at 1280 px and 375 px wide, in light
+   mode and in dark mode (forced through `data-theme="dark"`): no horizontal
+   scrolling, and 16 px side gutters on phones. It respects
+   `prefers-reduced-motion`. It has not been checked in Safari or on a real phone.
 
 ## How to publish on GitHub Pages
 
