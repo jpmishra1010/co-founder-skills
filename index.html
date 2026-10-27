@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Co-founder: Claude Code and Codex Skills for Solo Founders</title>
 <meta name="description" content="Open-source Claude Code and Codex skills for solo founders: one co-founder skill with 13 workflows for product decisions, releases, support, sales, finance and content.">
-<!-- Replace both placeholders before publishing. Google recommends an absolute canonical URL. -->
 <link rel="canonical" href="https://jpmishra1010.github.io/co-founder-skills/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Co-founder: Claude Code and Codex Skills for Solo Founders">
@@ -14,6 +13,7 @@
 <meta property="og:site_name" content="Co-founder">
 <!-- og:image is intentionally absent until a 1200x630 card is made and reviewed as an exported image. -->
 <meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="light dark">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,106 +36,471 @@
 </script>
 <style>
 :root {
-  --bg: #fbfaf7;
-  --surface: #ffffff;
-  --text: #1d1f1c;
-  --muted: #5b6058;
-  --line: #dedbd2;
-  --accent: #1f6b4f;
-  --code-bg: #f1efe8;
+  --bg: #f5f1e8;
+  --surface: #fffdf7;
+  --ink: #16181a;
+  --muted: #5b5f57;
+  --line: #ded7c6;
+  --accent: #1d6a4c;
+  --accent-ink: #ffffff;
+  --accent-soft: #dcebe1;
+  --mark: rgba(240, 196, 84, 0.55);
+  --dot: rgba(22, 24, 26, 0.09);
+  --term-bg: #101412;
+  --term-bar: #1a201c;
+  --term-text: #d6e1d9;
+  --term-dim: #7d8b82;
+  --term-accent: #7fdcab;
+  --term-warn: #f0c454;
+  --shadow: 0 1px 0 rgba(22, 24, 26, 0.04), 0 18px 40px -24px rgba(22, 24, 26, 0.35);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #141614;
-    --surface: #1c1f1c;
-    --text: #e9ebe6;
-    --muted: #a3a99f;
-    --line: #333832;
-    --accent: #7fcca9;
-    --code-bg: #232723;
+  :root:not([data-theme="light"]) {
+    --bg: #0f1211;
+    --surface: #161a18;
+    --ink: #ebeee8;
+    --muted: #a0a89e;
+    --line: #2a302c;
+    --accent: #84d4ab;
+    --accent-ink: #0f1211;
+    --accent-soft: #1b3127;
+    --mark: rgba(240, 196, 84, 0.28);
+    --dot: rgba(235, 238, 232, 0.07);
+    --term-bg: #0a0d0c;
+    --term-bar: #141916;
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 18px 40px -24px rgba(0, 0, 0, 0.8);
   }
 }
+:root[data-theme="dark"] {
+  --bg: #0f1211;
+  --surface: #161a18;
+  --ink: #ebeee8;
+  --muted: #a0a89e;
+  --line: #2a302c;
+  --accent: #84d4ab;
+  --accent-ink: #0f1211;
+  --accent-soft: #1b3127;
+  --mark: rgba(240, 196, 84, 0.28);
+  --dot: rgba(235, 238, 232, 0.07);
+  --term-bg: #0a0d0c;
+  --term-bar: #141916;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 18px 40px -24px rgba(0, 0, 0, 0.8);
+}
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--text);
-  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  font: 17px/1.6 var(--sans);
 }
-main { max-width: 46rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
-h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.15; margin: 0 0 1rem; }
-h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; }
-p, li { color: var(--text); }
-.lede { font-size: 1.15rem; }
-.muted { color: var(--muted); }
-a { color: var(--accent); }
-pre {
-  background: var(--code-bg);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 0.85rem 1rem;
-  overflow-x: auto;
-  font-size: 0.9rem;
+a { color: var(--accent); text-underline-offset: 3px; }
+code { font-family: var(--mono); font-size: 0.92em; }
+.wrap { max-width: 72rem; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+@media (min-width: 640px) { .wrap { padding-left: 32px; padding-right: 32px; } }
+
+/* Top bar */
+.top { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.brand-mark {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--accent); color: var(--accent-ink);
+  display: grid; place-items: center; font: 700 13px/1 var(--mono);
 }
-code { font-family: ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace; }
-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.5rem 0.5rem 0; border-bottom: 1px solid var(--line); }
-th { font-weight: 600; }
-td:first-child { white-space: nowrap; padding-right: 1rem; }
-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.9rem; }
+.top nav { display: flex; gap: 20px; font-size: 0.95rem; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--ink); }
+@media (max-width: 560px) { .top nav .hide-sm { display: none; } }
+
+/* Hero */
+.hero {
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.hero-grid { display: grid; gap: 40px; padding-top: 40px; padding-bottom: 64px; align-items: center; }
+@media (min-width: 960px) { .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 56px; padding-top: 64px; padding-bottom: 88px; } }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 600 0.8rem/1 var(--mono); letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  padding: 7px 10px; border-radius: 999px;
+}
+h1 {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(2.3rem, 6.2vw, 4.1rem); line-height: 1.04; letter-spacing: -0.025em;
+  margin: 18px 0 20px;
+}
+.marked { background: linear-gradient(transparent 62%, var(--mark) 62%, var(--mark) 92%, transparent 92%); padding: 0 2px; }
+.lede { font-size: 1.16rem; color: var(--muted); max-width: 36rem; margin: 0 0 28px; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+.install {
+  display: flex; align-items: stretch; max-width: 36rem;
+  background: var(--term-bg); color: var(--term-text);
+  border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+}
+.install code {
+  flex: 1; min-width: 0; padding: 14px 16px; font-size: 0.86rem; line-height: 1.55;
+  white-space: normal; overflow-wrap: anywhere; color: var(--term-text);
+}
+.install code::before { content: "$ "; color: var(--term-dim); }
+.copy {
+  border: 0; border-left: 1px solid #26302a; background: var(--term-bar); color: var(--term-text);
+  font: 600 0.8rem/1 var(--sans); padding: 0 16px; cursor: pointer;
+}
+.copy:hover { color: var(--term-accent); }
+.copy:focus-visible, .scen button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-top: 22px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: var(--accent-ink); text-decoration: none;
+  font-weight: 600; padding: 11px 18px; border-radius: 8px;
+}
+.btn:hover { filter: brightness(1.08); }
+.hero-note { font-size: 0.9rem; color: var(--muted); }
+
+/* Terminal */
+.term {
+  background: var(--term-bg); color: var(--term-text);
+  border-radius: 14px; box-shadow: var(--shadow); overflow: hidden;
+  border: 1px solid #222a25;
+}
+.term-bar { display: flex; align-items: center; gap: 8px; padding: 12px 14px; background: var(--term-bar); }
+.term-bar i { width: 11px; height: 11px; border-radius: 50%; background: #3a443d; display: block; }
+.term-bar span { margin-left: auto; font: 600 0.72rem/1 var(--mono); letter-spacing: 0.05em; text-transform: uppercase; color: var(--term-dim); }
+.term-body { padding: 20px 20px 8px; font: 0.86rem/1.7 var(--mono); min-height: 16.5rem; }
+.term-body p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.term-body .you { color: #ffffff; }
+.term-body .you::before { content: "› "; color: var(--term-accent); }
+.term-body .dim { color: var(--term-dim); }
+.term-body .ok { color: var(--term-accent); }
+.term-body .warn { color: var(--term-warn); }
+.term-body .gap { height: 0.6em; }
+.term-body p { animation: rise 0.35s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .term-body p { animation: none; } }
+.scen { display: flex; gap: 6px; padding: 12px 20px 18px; flex-wrap: wrap; }
+.scen button {
+  font: 600 0.78rem/1 var(--sans); color: var(--term-dim);
+  background: transparent; border: 1px solid #2b342e; border-radius: 999px;
+  padding: 8px 12px; cursor: pointer;
+}
+.scen button[aria-pressed="true"] { color: var(--term-bg); background: var(--term-accent); border-color: var(--term-accent); }
+
+/* Sections */
+section { padding: 72px 0; }
+.section-head { max-width: 44rem; margin-bottom: 36px; }
+.kicker { font: 600 0.8rem/1 var(--mono); letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+h2 { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.1; letter-spacing: -0.02em; margin: 12px 0 14px; }
+.section-head p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+
+/* Steps */
+.steps { display: grid; gap: 16px; counter-reset: step; padding: 0; margin: 0; list-style: none; }
+@media (min-width: 820px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; position: relative; }
+.steps li::before {
+  counter-increment: step; content: "0" counter(step);
+  font: 700 0.85rem/1 var(--mono); color: var(--accent);
+  display: block; margin-bottom: 14px;
+}
+.steps h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.steps p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+/* Workflows */
+.lanes { display: grid; gap: 28px; }
+@media (min-width: 720px) { .lanes { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .lanes { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+.lane h3 {
+  display: flex; align-items: baseline; justify-content: space-between;
+  font-size: 0.95rem; margin: 0 0 12px; padding-bottom: 10px; border-bottom: 2px solid var(--ink);
+}
+.lane h3 small { font: 500 0.8rem/1 var(--mono); color: var(--muted); }
+.cards { display: grid; gap: 12px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 16px 14px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.card:hover { transform: translateY(-2px); border-color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .card, .card:hover { transition: none; transform: none; } }
+.card code { font-weight: 700; color: var(--accent); font-size: 0.88rem; }
+.card p { margin: 6px 0 10px; font-size: 0.95rem; }
+.card q {
+  display: block; quotes: none; font-size: 0.86rem; color: var(--muted);
+  border-left: 2px solid var(--line); padding-left: 10px; font-style: italic;
+}
+
+/* Guardrails */
+.guard { background: var(--term-bg); color: var(--term-text); }
+.guard h2 { color: #ffffff; }
+.guard .section-head p { color: var(--term-dim); }
+.guard .kicker { color: var(--term-accent); }
+.guard-grid { display: grid; gap: 16px; }
+@media (min-width: 820px) { .guard-grid { grid-template-columns: 1fr 1fr; } }
+.guard-col { border: 1px solid #26302a; border-radius: 12px; padding: 24px; }
+.guard-col h3 { margin: 0 0 14px; font-size: 1rem; color: #ffffff; }
+.guard-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.guard-col li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; font-size: 0.97rem; }
+.guard-col li::before { font: 700 0.95rem/1.6 var(--mono); }
+.no li::before { content: "×"; color: var(--term-warn); }
+.yes li::before { content: "✓"; color: var(--term-accent); }
+
+/* Status */
+.status { display: grid; gap: 16px; }
+@media (min-width: 820px) { .status { grid-template-columns: 1fr 1fr 1fr; } }
+.status div { border-top: 2px solid var(--ink); padding-top: 14px; }
+.status h3 { margin: 0 0 6px; font-size: 1rem; }
+.status p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* CTA */
+.cta { padding-top: 24px; }
+.cta .install { margin-top: 8px; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 0.88rem; }
+footer p { margin: 0 0 6px; }
 </style>
 </head>
 <body>
+<header class="wrap top">
+  <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">cf</span>Co-founder</a>
+  <nav aria-label="Main">
+    <a class="hide-sm" href="#workflows">Workflows</a>
+    <a class="hide-sm" href="#guardrails">Guardrails</a>
+    <a href="https://github.com/jpmishra1010/co-founder-skills">GitHub</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Open source · MIT · v1.1.1</span>
+      <h1>Co-founder: Claude Code and Codex skills for <span class="marked">solo founders</span></h1>
+      <p class="lede">An open-source pack of Claude Code skills for solo founders that also installs
+      as a Codex co-founder skill: <strong>one entry skill and 13 workflows that run inside your
+      existing session.</strong> Decide, build, verify, support, sell and track the money with
+      evidence, not guesswork.</p>
+      <div class="install">
+        <code id="cmd1">npx skills add jpmishra1010/co-founder-skills --skill co-founder</code>
+        <button class="copy" type="button" data-copy="cmd1">Copy</button>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="https://github.com/jpmishra1010/co-founder-skills">View on GitHub →</a>
+        <span class="hero-note">Then type <code>/co-founder</code> in Claude Code or <code>$co-founder</code> in Codex.</span>
+      </div>
+    </div>
+
+    <figure class="term" aria-label="Illustrative example session" style="margin:0">
+      <div class="term-bar"><i></i><i></i><i></i><span>Illustrative session</span></div>
+      <div class="term-body" id="term" aria-live="polite">
+        <p class="you">/co-founder customers say CSV exports come out blank</p>
+        <p class="gap"></p>
+        <p class="dim">Project bound: your-app · brand and assets verified</p>
+        <p>Route → <span class="ok">customer-care</span></p>
+        <p class="gap"></p>
+        <p>1. Reproduce with the reported account settings</p>
+        <p>2. Impact map: export, invoice list, email attachments</p>
+        <p>3. Bounded fix → verify-release → reply draft</p>
+        <p class="gap"></p>
+        <p class="warn">Reply not sent. Waiting for your approval.</p>
+      </div>
+      <div class="scen" role="group" aria-label="Example scenarios">
+        <button type="button" data-scen="0" aria-pressed="true">Support</button>
+        <button type="button" data-scen="1" aria-pressed="false">Money</button>
+        <button type="button" data-scen="2" aria-pressed="false">Today</button>
+        <button type="button" data-scen="3" aria-pressed="false">Ship</button>
+      </div>
+    </figure>
+  </div>
+</div>
+
 <main>
-<h1>Co-founder: Claude Code and Codex skills for solo founders</h1>
-<p class="lede">An open-source pack of Claude Code skills for solo founders that also installs
-as a Codex co-founder skill: one entry skill and 13 workflows that run inside your
-existing session.</p>
-<p>The same <code>SKILL.md</code> files serve as Claude co-founder skills in Claude Code and as
-Codex skills for founders in Codex CLI/IDE. It adds no hosted service, mandatory model API,
-credential scraping, telemetry or automatic agent team. Your host keeps using its normal
-subscription allowance.</p>
-<p><a href="https://github.com/jpmishra1010/co-founder-skills">Source code on GitHub</a> · MIT license · version 1.1.1</p>
+<section class="wrap" id="how">
+  <div class="section-head">
+    <span class="kicker">How it works</span>
+    <h2>No new app. Your agent learns how a founder works.</h2>
+    <p>The same <code>SKILL.md</code> files serve as Claude co-founder skills in Claude Code and as
+    Codex skills for founders in Codex CLI/IDE. Your host keeps its normal subscription allowance.</p>
+  </div>
+  <ol class="steps">
+    <li><h3>Install once</h3><p>One <code>npx skills add</code> command adds the entry skill and all 13 workflows to Claude Code, Codex or both.</p></li>
+    <li><h3>Bind your project</h3><p>Open your own product, not this repo. Co-founder reads it read-only first and proposes the project and brand binding for you to approve.</p></li>
+    <li><h3>Ask like a co-founder</h3><p>Describe the problem in plain words. It routes to one workflow, works from evidence and stops before anything consequential.</p></li>
+  </ol>
+</section>
 
-<h2>Install</h2>
-<p>With Node.js/npm and the third-party <code>skills</code> CLI:</p>
-<pre><code>npx skills add jpmishra1010/co-founder-skills --skill co-founder --agent codex claude-code --global</code></pre>
-<p>Python 3.10+ is needed for the bundled project-context and validation helpers. Then open
-your own product in the host and invoke <code>/co-founder</code> in Claude Code or
-<code>$co-founder</code> in Codex.</p>
+<section class="wrap" id="workflows">
+  <div class="section-head">
+    <span class="kicker">Thirteen founder workflows</span>
+    <h2>One conversation, from idea to invoice.</h2>
+    <p>Each workflow has its own review principles. Only the one you need is loaded.</p>
+  </div>
+  <div class="lanes">
+    <div class="lane">
+      <h3>Think <small>3</small></h3>
+      <div class="cards">
+        <article class="card"><code>decide</code><p>Research and challenge assumptions; compare smaller alternatives.</p><q>Integration first, or fix onboarding?</q></article>
+        <article class="card"><code>feature-plan</code><p>Define users, states, recovery, permissions and acceptance criteria.</p><q>Plan team invites with roles.</q></article>
+        <article class="card"><code>impact-map</code><p>Trace shared data and modules a change must preserve.</p><q>What breaks if invoice numbering changes?</q></article>
+      </div>
+    </div>
+    <div class="lane">
+      <h3>Ship <small>4</small></h3>
+      <div class="cards">
+        <article class="card"><code>build-fix</code><p>Reproduce, diagnose and implement authorized, bounded changes.</p><q>Exports are blank for some accounts.</q></article>
+        <article class="card"><code>verify-release</code><p>Run relevant checks and distinguish release states.</p><q>Is this branch ready to ship?</q></article>
+        <article class="card"><code>security-review</code><p>Review trust boundaries, deny paths and sensitive operations.</p><q>Review the new billing webhook.</q></article>
+        <article class="card"><code>ui-polish</code><p>Improve an existing product using its own design language.</p><q>The settings page feels cluttered.</q></article>
+      </div>
+    </div>
+    <div class="lane">
+      <h3>Run <small>4</small></h3>
+      <div class="cards">
+        <article class="card"><code>customer-care</code><p>Follow an issue through to a verified customer outcome.</p><q>Close the loop on the export bug.</q></article>
+        <article class="card"><code>sales</code><p>Prepare relevant demos and truthful proposals and follow-ups.</p><q>Prep tomorrow's demo for a clinic.</q></article>
+        <article class="card"><code>finance</code><p>Track cash, runway, pricing and revenue from sourced records.</p><q>How many months of runway do I have?</q></article>
+        <article class="card"><code>founder-brief</code><p>Surface a small set of priorities from fresh evidence.</p><q>What should I do today?</q></article>
+      </div>
+    </div>
+    <div class="lane">
+      <h3>Grow <small>2</small></h3>
+      <div class="cards">
+        <article class="card"><code>growth</code><p>Choose a measurable experiment around the real bottleneck.</p><q>Signups are flat this month.</q></article>
+        <article class="card"><code>content-studio</code><p>Produce project-specific posts, campaigns and motion.</p><q>Turn this release into a launch post.</q></article>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>Thirteen founder workflows</h2>
-<table>
-<thead><tr><th>Workflow</th><th>What it does</th></tr></thead>
-<tbody>
-<tr><td><code>decide</code></td><td>Research and challenge assumptions; compare smaller alternatives.</td></tr>
-<tr><td><code>feature-plan</code></td><td>Define users, states, recovery, permissions and acceptance criteria.</td></tr>
-<tr><td><code>impact-map</code></td><td>Trace shared data and modules a change must preserve.</td></tr>
-<tr><td><code>build-fix</code></td><td>Reproduce, diagnose and implement authorized, bounded changes.</td></tr>
-<tr><td><code>verify-release</code></td><td>Run relevant checks and distinguish release states.</td></tr>
-<tr><td><code>security-review</code></td><td>Review trust boundaries, deny paths and sensitive operations.</td></tr>
-<tr><td><code>ui-polish</code></td><td>Improve an existing product using its own design language.</td></tr>
-<tr><td><code>customer-care</code></td><td>Follow an issue through to a verified customer outcome.</td></tr>
-<tr><td><code>growth</code></td><td>Choose a measurable experiment around the real bottleneck.</td></tr>
-<tr><td><code>sales</code></td><td>Prepare relevant demos and truthful proposals and follow-ups.</td></tr>
-<tr><td><code>finance</code></td><td>Track cash, runway, pricing and revenue from sourced records.</td></tr>
-<tr><td><code>content-studio</code></td><td>Produce project-specific posts, campaigns and motion.</td></tr>
-<tr><td><code>founder-brief</code></td><td>Surface a small set of priorities from fresh evidence.</td></tr>
-</tbody>
-</table>
+<section class="guard" id="guardrails">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Guardrails</span>
+      <h2>A co-founder that knows what it shouldn't do.</h2>
+      <p>A working method for the agent you already use, not a new model or an autonomous legal or business partner.</p>
+    </div>
+    <div class="guard-grid">
+      <div class="guard-col no">
+        <h3>Never</h3>
+        <ul>
+          <li>Runs a hosted service or calls a mandatory model API</li>
+          <li>Collects telemetry or scrapes credentials</li>
+          <li>Launches an agent team behind your back</li>
+          <li>Publishes, sends, deploys, spends or schedules without your approval</li>
+          <li>Moves money or gives tax, legal or investment advice</li>
+        </ul>
+      </div>
+      <div class="guard-col yes">
+        <h3>Always</h3>
+        <ul>
+          <li>Binds work to the right project and brand first</li>
+          <li>Works from evidence: reproductions, checks and sourced records</li>
+          <li>Says blocked, inconclusive or ready for human review, honestly</li>
+          <li>Keeps private project context inside your own repository</li>
+          <li>Loads one workflow at a time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>What it is not</h2>
-<p>A working method for the agent you already use, not a new model or an autonomous legal or
-business partner. Publishing, sending, deployment, spending and scheduling stay separately
-authorized by you. Model behavior inside authenticated Claude Code and Codex sessions has not
-been tested by this project; local tests cover structure and helpers only.</p>
-<p class="muted">No perfect-design, security, revenue, virality, search-ranking or
-usage-saving guarantee.</p>
+<section class="wrap" id="status">
+  <div class="section-head">
+    <span class="kicker">Honest status</span>
+    <h2>What has and hasn't been tested.</h2>
+  </div>
+  <div class="status">
+    <div><h3>Tested locally</h3><p>Pack structure, links and the Python helpers, through the repository's validator and unit tests.</p></div>
+    <div><h3>Not yet tested</h3><p>Model behavior inside authenticated Claude Code and Codex sessions.</p></div>
+    <div><h3>No guarantees</h3><p>No perfect-design, security, revenue, virality, search-ranking or usage-saving guarantee.</p></div>
+  </div>
+</section>
 
-<footer class="muted">
-<p>Original pack code, prose and fictional artwork are MIT licensed. External tools and
-trademarks retain their own rights. Not affiliated with OpenAI or Anthropic.</p>
-</footer>
+<section class="wrap cta">
+  <div class="section-head">
+    <h2>Give your agent a co-founder's habits.</h2>
+    <p>Needs Node.js/npm for the installer and Python 3.10+ for the bundled helpers.</p>
+  </div>
+  <div class="install">
+    <code id="cmd2">npx skills add jpmishra1010/co-founder-skills --skill co-founder --agent codex claude-code --global</code>
+    <button class="copy" type="button" data-copy="cmd2">Copy</button>
+  </div>
+</section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://github.com/jpmishra1010/co-founder-skills">Source on GitHub</a> · <a href="https://github.com/jpmishra1010/co-founder-skills/blob/main/LICENSE">MIT license</a></p>
+    <p>Original pack code, prose and fictional artwork are MIT licensed. External tools and
+    trademarks retain their own rights. Not affiliated with OpenAI or Anthropic.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = document.getElementById(btn.getAttribute('data-copy')).textContent;
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+      try { navigator.clipboard.writeText(text).then(done, function () { btn.textContent = 'Select it'; }); }
+      catch (e) { btn.textContent = 'Select it'; }
+    });
+  });
+
+  var scenarios = [
+    [['you', '/co-founder customers say CSV exports come out blank'], ['gap'],
+     ['dim', 'Project bound: your-app · brand and assets verified'],
+     ['', 'Route → <ok>customer-care</ok>'], ['gap'],
+     ['', '1. Reproduce with the reported account settings'],
+     ['', '2. Impact map: export, invoice list, email attachments'],
+     ['', '3. Bounded fix → verify-release → reply draft'], ['gap'],
+     ['warn', 'Reply not sent. Waiting for your approval.']],
+    [['you', '$co-founder how many months of runway do I have?'], ['gap'],
+     ['dim', 'Reading metrics.json and dated, sourced snapshots'],
+     ['', 'Route → <ok>finance</ok>'], ['gap'],
+     ['', '1. Cash and monthly burn from recorded entries only'],
+     ['', '2. Runway scenarios: current, slower sales, one hire'],
+     ['', '3. Questions to take to your accountant'], ['gap'],
+     ['warn', 'Two snapshots are stale. Update them before relying on this.']],
+    [['you', '/co-founder what should I do today?'], ['gap'],
+     ['dim', 'Checking commitments, open issues and recent metrics'],
+     ['', 'Route → <ok>founder-brief</ok>'], ['gap'],
+     ['', '1. Demo follow-up promised for today'],
+     ['', '2. Export bug: fix verified, customer not told yet'],
+     ['', '3. One growth experiment is due for review'], ['gap'],
+     ['warn', 'Three priorities, each with its evidence. Nothing scheduled.']],
+    [['you', '$co-founder is this branch ready to ship?'], ['gap'],
+     ['dim', 'Changed files mapped to the flows they touch'],
+     ['', 'Route → <ok>verify-release</ok>'], ['gap'],
+     ['', '1. Run the relevant tests and record the output'],
+     ['', '2. Flag tests changed in this branch for review'],
+     ['', '3. Release state: blocked, inconclusive or ready for review'], ['gap'],
+     ['warn', 'Not deployed. Deployment stays your call.']]
+  ];
+  var term = document.getElementById('term');
+  var buttons = document.querySelectorAll('[data-scen]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var current = 0, timer = null;
+
+  function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function show(i) {
+    current = i;
+    term.innerHTML = scenarios[i].map(function (line, n) {
+      if (line[0] === 'gap') return '<p class="gap"></p>';
+      var html = esc(line[1]).replace(/&lt;ok&gt;(.*?)&lt;\/ok&gt;/g, '<span class="ok">$1</span>');
+      return '<p class="' + line[0] + '" style="animation-delay:' + (reduce ? 0 : n * 70) + 'ms">' + html + '</p>';
+    }).join('');
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(Number(b.getAttribute('data-scen')) === i)); });
+  }
+  function start() { if (!reduce) timer = setInterval(function () { show((current + 1) % scenarios.length); }, 7000); }
+  function stop() { clearInterval(timer); timer = null; }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { stop(); show(Number(b.getAttribute('data-scen'))); });
+  });
+  start();
+})();
+</script>
 </body>
 </html>
